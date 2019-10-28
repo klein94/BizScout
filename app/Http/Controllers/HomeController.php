@@ -24,6 +24,7 @@ class HomeController extends Controller
         return view('dashboard');
     }
 
+
 function authRedirect() {
 
         // Define the GMB scope

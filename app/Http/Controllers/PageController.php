@@ -73,4 +73,23 @@ class PageController extends Controller
     {
         return view('pages.upgrade');
     }
+
+    public function prospects()
+    {
+        return view('pages.prospect');
+    }
+ /**
+     * Display prospect page
+     *
+     * @return \Illuminate\View\View
+     */
+     public function findleads()
+    {
+        return view('pages.findleads');
+    }
+ /**
+     * Display findleads page
+     *
+     * @return \Illuminate\View\View
+     */
 }

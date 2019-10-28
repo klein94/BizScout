@@ -1,11 +1,11 @@
-@extends('layouts.app', ['class' => 'register-page', 'page' => _('Register Page'), 'contentClass' => 'register-page'])
+@extends('layouts.app', ['class' => 'register-page', 'page' => _('Registe Company'), 'contentClass' => 'register-page'])
 
 @section('content')
     <div class="row">
         <div class="col-md-5 ml-auto">
             <div class="info-area info-horizontal mt-5">
                 <div class="icon icon-warning">
-                    <i class="tim-icons icon-wifi"></i>
+                    <i class="tim-icons icon-chart-bar-32"></i>
                 </div>
                 <div class="description">
                     <h3 class="info-title">{{ _('Marketing') }}</h3>
@@ -27,12 +27,12 @@
             </div>
             <div class="info-area info-horizontal">
                 <div class="icon icon-info">
-                    <i class="tim-icons icon-trophy"></i>
+                    <i class="tim-icons icon-email-85"></i>
                 </div>
                 <div class="description">
                     <h3 class="info-title">{{ _('Built Audience') }}</h3>
                     <p class="description">
-                        {{ _('There is also a Fully Customizable CMS Admin Dashboard for this product.') }}
+                        {{ _('There is also a Fully Customizable Email.') }}
                     </p>
                 </div>
             </div>
@@ -41,7 +41,7 @@
             <div class="card card-register card-white">
                 <div class="card-header">
                     <img class="card-img" src="{{ asset('white') }}/img/card-primary.png" alt="Card image">
-                    <h4 class="card-title">{{ _('Register') }}</h4>
+                    <h4 class="card-title">Register</h4>
                 </div>
                 <form class="form" method="post" action="{{ route('register') }}">
                     @csrf

@@ -1,26 +1,38 @@
-<div class="sidebar">
+<div class="sidebar" data="blue">
     <div class="sidebar-wrapper">
         <div class="logo">
             <a href="#" class="simple-text logo-mini">{{ _('BS') }}</a>
             <a href="#" class="simple-text logo-normal">{{ _('Business DashBoard') }}</a>
         </div>
         <ul class="nav">
-            <li @if ($pageSlug == 'dashboard') class="active " @endif>
+            <li @if ($pageSlug == 'dashboard') class="active" @endif>
                 <a href="{{ route('home') }}">
                     <i class="tim-icons icon-chart-pie-36"></i>
                     <p>{{ _('Dashboard') }}</p>
                 </a>
             </li>
-            <li @if ($pageSlug == 'dashboard') class="active " @endif>
-                <a href="{{ route('home') }}">
+            <li @if ($pageSlug == 'findleads') class="active" @endif>
+                <a href="{{ route('pages.findleads') }}">
                     <i class="tim-icons icon-zoom-split"></i>
                     <p>{{ _('Find Leads') }}</p>
                 </a>
             </li>
+             <li @if ($pageSlug == 'prospects') class="active" @endif>
+                <a href="{{ route('pages.prospects') }}">
+                    <i class="tim-icons icon-check-2"></i>
+                    <p>{{ _('Prospects') }}</p>
+                </a>
+            </li>
+             <li @if ($pageSlug == 'dashboard') class="active" @endif>
+                <a href="{{ route('home') }}">
+                    <i class="tim-icons icon-email-85"></i>
+                    <p>{{ _('Email Management') }}</p>
+                </a>
+            </li>
             <li>
                 <a data-toggle="collapse" href="#laravel-examples" aria-expanded="true">
-                    <i class="fab fa-laravel" ></i>
-                    <span class="nav-link-text" >{{ __('Laravel Examples') }}</span>
+                    <i class="fal fa-users"></i>
+                    <span class="nav-link-text" >{{ __('Agents') }}</span>
                     <b class="caret mt-1"></b>
                 </a>
 

@@ -27,6 +27,8 @@ Route::group(['middleware' => 'auth'], function () {
 		Route::get('tables', ['as' => 'pages.tables', 'uses' => 'PageController@tables']);
 		Route::get('typography', ['as' => 'pages.typography', 'uses' => 'PageController@typography']);
 		Route::get('upgrade', ['as' => 'pages.upgrade', 'uses' => 'PageController@upgrade']);
+		Route::get('prospects', ['as' => 'pages.prospects', 'uses' => 'PageController@prospects']);
+		Route::get('findleads', ['as' => 'pages.findleads', 'uses' => 'PageController@findleads']);
 });
 
 Route::group(['middleware' => 'auth'], function () {
