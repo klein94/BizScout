@@ -92,4 +92,14 @@ class PageController extends Controller
      *
      * @return \Illuminate\View\View
      */
+
+  public function emailmanagement()
+    {
+        return view('pages.emailmanagement');
+    }
+ /**
+     * Display findleads page
+     *
+     * @return \Illuminate\View\View
+     */
 }

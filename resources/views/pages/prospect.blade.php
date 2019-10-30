@@ -33,7 +33,7 @@
                   Kc Cups Coffee
                 </td>
                 <td class="text-center">
-                  <button type="submit" class="btn btn-fill btn-warning">Unclaim</button>
+                  <button type="submit" class="btn btn-fill btn-warning">Contacted</button>
                 </td>
                 <td class="text-center">
                   <button type="button" rel="tooltip" title="" class="btn btn-link" data-original-title="Edit Task">
@@ -67,7 +67,7 @@
                   Sage Rodriguez
                 </td>
                 <td class="text-center">
-                  <button type="submit" class="btn btn-fill btn-warning">Unclaim</button>
+                  <button type="submit" class="btn btn-fill btn-warning">Contacted</button>
                 </td>
                 <td class="text-center">
                  <button type="button" rel="tooltip" title="" class="btn btn-link" data-original-title="Edit Task">
@@ -84,7 +84,7 @@
                   Philip Chaney
                 </td>
                 <td class="text-center">
-                  <button type="submit" class="btn btn-fill btn-warning">Unclaim</button>
+                  <button type="submit" class="btn btn-fill btn-warning">Contacted</button>
                 </td>
                 <td class="text-center">
                   <button type="button" rel="tooltip" title="" class="btn btn-link" data-original-title="Edit Task">
@@ -101,7 +101,7 @@
                   Doris Greene
                 </td>
                 <td class="text-center">
-                  <button type="submit" class="btn btn-fill btn-warning">Unclaim</button>
+                  <button type="submit" class="btn btn-fill btn-warning">Contacted</button>
                 </td>
                 <td class="text-center">
                   <button type="button" rel="tooltip" title="" class="btn btn-link" data-original-title="Edit Task">
@@ -135,7 +135,7 @@
                   Jon Porter
                 </td>
                 <td class="text-center">
-                 <button type="submit" class="btn btn-fill btn-warning">Unclaim</button>
+                 <button type="submit" class="btn btn-fill btn-warning">Contacted</button>
                 </td>
                 <td class="text-center">
                   <button type="button" rel="tooltip" title="" class="btn btn-link" data-original-title="Edit Task">

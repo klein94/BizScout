@@ -29,6 +29,7 @@ Route::group(['middleware' => 'auth'], function () {
 		Route::get('upgrade', ['as' => 'pages.upgrade', 'uses' => 'PageController@upgrade']);
 		Route::get('prospects', ['as' => 'pages.prospects', 'uses' => 'PageController@prospects']);
 		Route::get('findleads', ['as' => 'pages.findleads', 'uses' => 'PageController@findleads']);
+		Route::get('emailmanagement', ['as' => 'pages.emailmanagement', 'uses' => 'PageController@emailmanagement']);
 });
 
 Route::group(['middleware' => 'auth'], function () {
