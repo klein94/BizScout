@@ -127,27 +127,53 @@
 
 </div>
 
-    <!-- Contact -->
-    <div class="modal fade" id="ContactPopUp" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
+
+<div class="modal fade" id="ContactPopUp" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle"></h5>
+        <h5 class="modal-title" id="exampleModalLabel">Message</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <center>
-          Are you sure you want to submit? 
-        </center>
+        ...
       </div>
       <div class="modal-footer">
-        <button type="submit" class="btn btn-success" id="biSave">Yes <i class="fal fa-file-check"></i></button>
-        <button type="button" class="btn btn-danger" data-dismiss="modal">No <i class="far fa-file-times"></i></button>
+         <button type="submit" class="btn btn-success" id="biSave"><i class="fas fa-phone"></i></button>
+        <button type="submit" class="btn btn-success" id="biSave" data-toggle="modal" data-target="#Message"><i class="fas fa-envelope"></i></button>
       </div>
     </div>
   </div>
 </div>
+
+    
+<div class="modal fade" id="Message" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Message</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       <form>
+         <div class="form-group">
+    <input type="number" class="form-control" id="MessageNumber" placeholder="Input number" disabled>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Input Message"></textarea>
+  </div>
+       </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Send <i class="far fa-paper-plane"></i></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
     <!-- Contact end -->
   @endsection 
