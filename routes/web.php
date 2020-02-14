@@ -1,5 +1,7 @@
 <?php
 
+use App\Mail\TestEmail;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,8 +14,27 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+
+
+	return view('welcome');
+	broadcast(new WebsocketDemoEvent('some data'));
+	
+	
 });
+
+//route send email
+Route::get('/testmail', function () { 
+
+
+	$data = ['message' => 'This is a test!'];
+	Mail::to('jmattcustorio@gmail.com')->send(new TestEmail($data));
+ 
+	return back();
+	})->name('testmail');
+
+
+	
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
@@ -38,4 +59,5 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::put('profile', ['as' => 'profile.update', 'uses' => 'ProfileController@update']);
 	Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'ProfileController@password']);
 });
+
 

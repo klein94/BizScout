@@ -5,17 +5,17 @@
   <div class="col-md-8 ml-auto mr-auto">
     <div class="card card-upgrade">
       <div class="card-header text-center">
-        <h4 class="card-title">White Dashboard PRO</h3>
-          <p class="card-category">Are you looking for more components? Please check our Premium Version of White Dashboard PRO.</p>
+        <!-- <h3 class="card-title">White Dashboard PRO</h3>
+          <p class="card-category">Are you looking for more components? Please check our Premium Version of White Dashboard PRO.</p> -->
       </div>
       <div class="card-body">
         <div class="table-responsive table-upgrade">
           <table class="table">
-            <thead>
+            <!-- <thead>
               <th></th>
               <th class="text-center">Free</th>
               <th class="text-center">PRO</th>
-            </thead>
+            </thead> -->
             <tbody>
                 <tr>
                   <td><h3 class="text-primary mb-0 mt-3">Laravel</h3></td>

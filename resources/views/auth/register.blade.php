@@ -8,7 +8,7 @@
                     <i class="tim-icons icon-chart-bar-32"></i>
                 </div>
                 <div class="description">
-                    <h3 class="info-title">{{ _('Marketing') }}</h3>
+                    <h3 class="info-title">{{ _('Find Leads') }}</h3>
                     <p class="description">
                         {{ _('We\'ve created the marketing campaign of the website. It was a very interesting collaboration.') }}
                     </p>
@@ -16,12 +16,12 @@
             </div>
             <div class="info-area info-horizontal">
                 <div class="icon icon-primary">
-                    <i class="tim-icons icon-triangle-right-17"></i>
+                    <i class="tim-icons icon-mobile"></i>
                 </div>
                 <div class="description">
-                    <h3 class="info-title">{{ _('Fully Coded in HTML5') }}</h3>
+                    <h3 class="info-title">{{ _('Real Time Communication') }}</h3>
                     <p class="description">
-                        {{ _('We\'ve developed the website with HTML5 and CSS3. The client has access to the code using GitHub.') }}
+                        {{ _('We\'ve developed the website with real time chat and voice call.') }}
                     </p>
                 </div>
             </div>
@@ -30,7 +30,7 @@
                     <i class="tim-icons icon-email-85"></i>
                 </div>
                 <div class="description">
-                    <h3 class="info-title">{{ _('Built Audience') }}</h3>
+                    <h3 class="info-title">{{ _('Email Campaign') }}</h3>
                     <p class="description">
                         {{ _('There is also a Fully Customizable Email.') }}
                     </p>
@@ -40,13 +40,22 @@
         <div class="col-md-7 mr-auto">
             <div class="card card-register card-white">
                 <div class="card-header">
-                    <img class="card-img" src="{{ asset('white') }}/img/card-primary.png" alt="Card image">
+                    <img class="card-img" src="{{ asset('white') }}/img/card-primary-3.png" alt="Card image">
                     <h4 class="card-title">Register</h4>
                 </div>
                 <form class="form" method="post" action="{{ route('register') }}">
                     @csrf
 
                     <div class="card-body">
+                        <!-- <div class="input-group{{ $errors->has('name') ? ' has-danger' : '' }}">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                    <i class="tim-icons icon-bank"></i>
+                                </div>
+                            </div>
+                            <input type="text" name="company name" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ _('Company Name') }}" value="{{ old('name') }}">
+                            @include('alerts.feedback', ['field' => 'name'])
+                        </div> -->
                         <div class="input-group{{ $errors->has('name') ? ' has-danger' : '' }}">
                             <div class="input-group-prepend">
                                 <div class="input-group-text">
@@ -93,7 +102,7 @@
                         </div>
                     </div>
                     <div class="card-footer">
-                        <button type="submit" class="btn btn-primary btn-round btn-lg">{{ _('Get Started') }}</button>
+                        <button type="submit" class="btn btn-fill btn-success btn-round btn-lg">{{ _('Get Started') }}</button>
                     </div>
                 </form>
             </div>

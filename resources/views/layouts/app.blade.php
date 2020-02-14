@@ -20,7 +20,7 @@
         <link href="{{ asset('white') }}/css/white-dashboard.css?v=1.0.0" rel="stylesheet" />
         <link href="{{ asset('white') }}/css/theme.css" rel="stylesheet" />
     </head>
-    <body class="white-content {{ $class ?? '' }}">
+    <body id="app" class="white-content {{ $class ?? '' }}">
         @auth()
             <div class="wrapper">
                     @include('layouts.navbars.sidebar')
@@ -174,5 +174,8 @@
             });
         </script>
         @stack('js')
+
+        <script src="js/app.js"></script>
+
     </body>
 </html>

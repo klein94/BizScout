@@ -6,11 +6,11 @@
                     {{ _('BizScout') }}
                 </a>
             </li>
-            <li class="nav-item">
+           <!--  <li class="nav-item">
                 <a href="https://updivision.com" target="blank" class="nav-link">
                     {{ _('Updivision') }}
                 </a>
-            </li>
+            </li> -->
             <li class="nav-item">
                 <a href="#" class="nav-link">
                     {{ _('About Us') }}
