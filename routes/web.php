@@ -28,7 +28,9 @@ Route::group(['middleware' => 'auth'], function () {
 		Route::get('typography', ['as' => 'pages.typography', 'uses' => 'PageController@typography']);
 		Route::get('upgrade', ['as' => 'pages.upgrade', 'uses' => 'PageController@upgrade']);
 		Route::get('prospects', ['as' => 'pages.prospects', 'uses' => 'PageController@prospects']);
-		Route::get('findleads', ['as' => 'pages.findleads', 'uses' => 'PageController@findleads']);
+		Route::get('findleads/{id?}', ['as' => 'pages.findleads', 'uses' => 'PageController@findleads']);
+		Route::get('contact/{id}', ['as' => 'pages.contact', 'uses' => 'PageController@getContact']);
+		Route::post('save', ['as' => 'pages.save', 'uses' => 'PageController@store']);
 		Route::get('emailmanagement', ['as' => 'pages.emailmanagement', 'uses' => 'PageController@emailmanagement']);
 });
 
