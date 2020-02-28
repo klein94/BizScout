@@ -1,3 +1,7 @@
+
+
+
+
 <nav class="navbar navbar-expand-lg navbar-absolute navbar-transparent">
     <div class="container-fluid">
         <div class="navbar-wrapper">
@@ -35,7 +39,7 @@
                         <li class="nav-link">
                             <a href="#" class="nav-item dropdown-item">{{ __('You have 5 more tasks') }}</a>
                         </li>
-                        <li class="nav-link">
+                        <!-- <li class="nav-link">
                             <a href="#" class="nav-item dropdown-item">{{ __('Your friend Michael is in town') }}</a>
                         </li>
                         <li class="nav-link">
@@ -43,7 +47,7 @@
                         </li>
                         <li class="nav-link">
                             <a href="#" class="nav-item dropdown-item">{{ __('Another one') }}</a>
-                        </li>
+                        </li> -->
                     </ul>
                 </li>
                 <li class="dropdown nav-item">
@@ -76,7 +80,10 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="{{ __('SEARCH') }}">
+                <!-- <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="{{ __('SEARCH') }}"> -->
+               
+                <input type="text" class="form-control" id="autocomplete" list="leads" placeholder="{{ __('SEARCH BUSINESS CATEGORY') }}">
+                <datalist id="leads"></datalist>
                 <button type="button" class="close" data-dismiss="modal" aria-label="{{ __('Close') }}">
                     <i class="tim-icons icon-simple-remove"></i>
               </button>
@@ -84,3 +91,35 @@
         </div>
     </div>
 </div>
+         
+        <script>
+             (function(leads) {
+
+                function addItems (list, container) {
+                    list.forEach(function(item){
+                    const option = document.createElement('option');
+
+                    option.setAttribute('value', item);
+                    container.appendChild(option);
+                });
+                }
+
+                const leadsList = ['Hardware','IT Solutions','Pharmacy','Media','Banks'];
+                addItems(leadsList, leads);
+                }(document.getElementById('leads')));
+        </script>
+        
+
+        <!-- <script>
+        $(document).ready(function() {
+
+            $('input.city').typeahead({
+                name: 'city',
+                remote: 'city.php?query=%QUERY'
+
+            });
+
+        })
+    </script> -->
+    
+            

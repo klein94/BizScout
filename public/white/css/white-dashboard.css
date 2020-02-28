@@ -2303,6 +2303,21 @@ textarea.form-control {
   }
 }
 
+.btn-2 {
+  display: inline-block;
+  font-weight: 600;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: 11px 40px;
+  font-size: 0.875rem;
+  line-height: 1.35em;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
 .btn {
   display: inline-block;
   font-weight: 600;
@@ -17783,8 +17798,8 @@ Copyright (c) 2015 Daniel Eden
     padding-bottom: 0.7rem;
 }
 
-.login-page .card-login.card-white .card-header .card-title {
-  color: #ffffff;
+.login-page .card-login.card-white .card-header .card-title { 
+  color: #00a6eab8;
 }
 
 .login-page .card-login .card-header .card-title {
@@ -17832,7 +17847,9 @@ Copyright (c) 2015 Daniel Eden
 }
 
 .card-register.card-white .card-header .card-title {
-  color: #ffffff;
+  color: #00a6eab8;
+  color: white;
+  text-shadow: 2px 2px 4px #000000;
 }
 
 .card-register .card-header .card-title {
