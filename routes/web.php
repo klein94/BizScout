@@ -31,7 +31,10 @@ Route::group(['middleware' => 'auth'], function () {
 		Route::get('findleads/{id?}', ['as' => 'pages.findleads', 'uses' => 'PageController@findleads']);
 		Route::get('contact/{id}', ['as' => 'pages.contact', 'uses' => 'PageController@getContact']);
 		Route::post('save', ['as' => 'pages.save', 'uses' => 'PageController@store']);
-		Route::get('emailmanagement', ['as' => 'pages.emailmanagement', 'uses' => 'PageController@emailmanagement']);
+		Route::get('email_campaign', ['as' => 'pages.email_campaign', 'uses' => 'PageController@email_campaign']);
+		Route::get('contactlist', ['as' => 'pages.contactlist', 'uses' => 'PageController@contactlist']);
+		Route::get('compose_email', ['as' => 'pages.compose_email', 'uses' => 'PageController@compose_email']);
+		Route::get('inbox', ['as' => 'pages.inbox', 'uses' => 'PageController@inbox']);
 });
 
 Route::group(['middleware' => 'auth'], function () {

@@ -126,9 +126,24 @@ class PageController extends Controller
      * @return \Illuminate\View\View
      */
 
-  public function emailmanagement()
+  public function email_campaign()
     {
-        return view('pages.emailmanagement');
+        return view('pages.email_campaign');
+    }
+
+    public function contactlist()
+    {
+        return view('pages.contactlist');
+    }
+
+    public function compose_email()
+    {
+        return view('pages.compose_email');
+    }
+
+    public function inbox()
+    {
+        return view('pages.inbox');
     }
  /**
      * Display findleads page

@@ -24,8 +24,8 @@
         </ul>
         <div class="copyright">
             &copy; {{ now()->year }} {{ _('made with') }} <i class="tim-icons icon-heart-2"></i> {{ _('by') }}
-            <a href="#">{{ _('BizScout') }}</a> &amp;
-            <a href="#">{{ _('Updivision') }}</a> {{ _('for a better Business') }}.
+            <a href="#">{{ _('BizScout') }} </a> {{ _('for a better Business') }}.
+            <!-- <a href="#">{{ _('Updivision') }}</a> {{ _('for a better Business') }}. -->
         </div>
     </div>
 </footer>

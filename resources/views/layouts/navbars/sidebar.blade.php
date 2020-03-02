@@ -5,30 +5,70 @@
             <a href="#" class="simple-text logo-normal">{{ _('Business DashBoard') }}</a>
         </div>
         <ul class="nav">
-            <li @if ($pageSlug == 'dashboard') class="active" @endif>
+            <li @if ($pageSlug ?? '' == 'dashboard') class="active" @endif>
                 <a href="{{ route('home') }}">
                     <i class="tim-icons icon-chart-pie-36"></i>
                     <p>{{ _('Dashboard') }}</p>
                 </a>
             </li>
-            <li @if ($pageSlug ?? '' == 'findleads') class="active" @endif>
+            <li @if ($pageSlug ?? '' ?? '' == 'findleads') class="active" @endif>
                 <a href="{{ route('pages.findleads') }}">
                     <i class="tim-icons icon-zoom-split"></i>
                     <p>{{ _('Find Leads') }}</p>
                 </a>
             </li>
-             <li @if ($pageSlug ?? '' == 'prospects') class="active" @endif>
+             <li @if ($pageSlug ?? '' ?? '' == 'prospects') class="active" @endif>
                 <a href="{{ route('pages.prospects') }}">
                     <i class="tim-icons icon-check-2"></i>
                     <p>{{ _('Prospects') }}</p>
                 </a>
             </li>
-             <li @if ($pageSlug ?? '' == 'emailmangement') class="active" @endif>
-                <a href="{{ route('pages.emailmanagement') }}">
-                    <i class="tim-icons icon-email-85"></i>
-                    <p>{{ _('Email Management') }}</p>
+
+            <li>
+                <a data-toggle="collapse" href="#email-management" aria-expanded="true">
+                    <i class="fal fa-users"></i>
+                    <span class="nav-link-text" >{{ __('Email Management') }}</span>
+                    <b class="caret mt-1"></b>
                 </a>
             </li>
+
+            <ul class="nav pl-4">
+                <div class="collapse show" id="email-management">
+                <li @if ($pageSlug ?? '' ?? '' == 'email_campaign') class="active" @endif>
+                    <a href="{{ route('pages.email_campaign') }}" >
+                        <i class="tim-icons icon-email-85"></i>
+                        <p>{{ _('Email Campaign') }}</p>
+                    
+                    </a>   
+                </li>
+
+                <li @if ($pageSlug ?? '' ?? '' == 'compose_email') class="active" @endif>
+                    <a href="{{ route('pages.compose_email') }}" >
+                        <i class="tim-icons icon-single-copy-04"></i>
+                        <p>{{ _('Compose Email') }}</p>
+                    
+                    </a>   
+                </li>
+
+                <li @if ($pageSlug ?? '' ?? '' == 'inbox') class="active" @endif>
+                    <a href="{{ route('pages.inbox') }}" >
+                        <i class="tim-icons icon-single-copy-04"></i>
+                        <p>{{ _('Inbox') }}</p>
+                    
+                    </a>   
+                </li>
+        
+                <li @if ($pageSlug ?? '' ?? '' == 'contactlist') class="active" @endif>
+                    <a href="{{ route('pages.contactlist') }}" >
+                        <i class="tim-icons icon-single-copy-04"></i>
+                        <p>{{ _('Contact List') }}</p>
+                    
+                    </a>   
+                </li>
+                </div>
+            </ul>
+
+           
             <li>
                 <a data-toggle="collapse" href="#laravel-examples" aria-expanded="true">
                     <i class="fal fa-users"></i>
@@ -38,13 +78,13 @@
 
                 <div class="collapse show" id="laravel-examples">
                     <ul class="nav pl-4">
-                        <li @if ($pageSlug ?? '' == 'profile') class="active " @endif>
+                        <li @if ($pageSlug ?? '' ?? '' == 'profile') class="active " @endif>
                             <a href="{{ route('profile.edit')  }}">
                                 <i class="tim-icons icon-single-02"></i>
                                 <p>{{ _('User Profile') }}</p>
                             </a>
                         </li>
-                        <li @if ($pageSlug ?? '' == 'users') class="active " @endif>
+                        <li @if ($pageSlug ?? '' ?? '' == 'users') class="active " @endif>
                             <a href="{{ route('user.index')  }}">
                                 <i class="tim-icons icon-bullet-list-67"></i>
                                 <p>{{ _('User Management') }}</p>
@@ -53,43 +93,43 @@
                     </ul>
                 </div>
             </li>
-            <!-- <li @if ($pageSlug ?? '' == 'icons') class="active " @endif>
+            <!-- <li @if ($pageSlug ?? '' ?? '' == 'icons') class="active " @endif>
                 <a href="{{ route('pages.icons') }}">
                     <i class="tim-icons icon-atom"></i>
                     <p>{{ _('Icons') }}</p>
                 </a>
             </li>
-            <li @if ($pageSlug ?? '' == 'maps') class="active " @endif>
+            <li @if ($pageSlug ?? '' ?? '' == 'maps') class="active " @endif>
                 <a href="{{ route('pages.maps') }}">
                     <i class="tim-icons icon-pin"></i>
                     <p>{{ _('Maps') }}</p>
                 </a>
             </li>
-            <li @if ($pageSlug ?? '' == 'notifications') class="active " @endif>
+            <li @if ($pageSlug ?? '' ?? '' == 'notifications') class="active " @endif>
                 <a href="{{ route('pages.notifications') }}">
                     <i class="tim-icons icon-bell-55"></i>
                     <p>{{ _('Notifications') }}</p>
                 </a>
             </li>
-            <li @if ($pageSlug ?? '' == 'tables') class="active " @endif>
+            <li @if ($pageSlug ?? '' ?? '' == 'tables') class="active " @endif>
                 <a href="{{ route('pages.tables') }}">
                     <i class="tim-icons icon-puzzle-10"></i>
                     <p>{{ _('Table List') }}</p>
                 </a>
             </li>
-            <li @if ($pageSlug ?? '' == 'typography') class="active " @endif>
+            <li @if ($pageSlug ?? '' ?? '' == 'typography') class="active " @endif>
                 <a href="{{ route('pages.typography') }}">
                     <i class="tim-icons icon-align-center"></i>
                     <p>{{ _('Typography') }}</p>
                 </a>
             </li>
-            <li @if ($pageSlug ?? '' == 'rtl') class="active " @endif>
+            <li @if ($pageSlug ?? '' ?? '' == 'rtl') class="active " @endif>
                 <a href="{{ route('pages.rtl') }}">
                     <i class="tim-icons icon-world"></i>
                     <p>{{ _('RTL Support') }}</p>
                 </a>
             </li>
-            <li class=" {{ $pageSlug ?? '' == 'upgrade' ? 'active' : '' }}">
+            <li class=" {{ $pageSlug ?? '' ?? '' == 'upgrade' ? 'active' : '' }}">
                 <a href="{{ route('pages.upgrade') }}">
                     <i class="tim-icons icon-spaceship"></i>
                     <p>{{ _('Upgrade to PRO') }}</p>
