@@ -18,6 +18,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
 Route::get('/test', 'HomeController@authRedirect');
+Route::get('/chats', 'ChatsController@index');
 
 Route::group(['middleware' => 'auth'], function () {
 		Route::get('icons', ['as' => 'pages.icons', 'uses' => 'PageController@icons']);
