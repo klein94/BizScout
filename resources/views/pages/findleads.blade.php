@@ -2,6 +2,7 @@
 
 
 <script type="text/javascript" src="{{asset('js/jquery.js')}}"></script>
+
 <!-- <script type="text/javascript" src="https://media.twiliocdn.com/sdk/js/client/v1.9/twilio.min.js"></script> -->
 <script type="text/javascript">
   $(document).ready(function() {
