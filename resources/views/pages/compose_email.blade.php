@@ -3,6 +3,7 @@
 
 @section('content')
 
+<!-- Compose Email -->
 <div class="row">
     <div class="col-8">
         <div class="card ">
