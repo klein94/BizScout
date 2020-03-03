@@ -35,6 +35,8 @@ Route::group(['middleware' => 'auth'], function () {
 		Route::get('contactlist', ['as' => 'pages.contactlist', 'uses' => 'PageController@contactlist']);
 		Route::get('compose_email', ['as' => 'pages.compose_email', 'uses' => 'PageController@compose_email']);
 		Route::get('inbox', ['as' => 'pages.inbox', 'uses' => 'PageController@inbox']);
+		Route::get('email', ['as' => 'pages.email', 'uses' => 'API\PlacesController@sendMail']);
+		Route::get('emailmanagement', ['as' => 'pages.emailmanagement', 'uses' => 'PageController@emailmanagement']);
 });
 
 Route::group(['middleware' => 'auth'], function () {

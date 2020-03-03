@@ -22,6 +22,7 @@
                             <option>Campaign 2</option>
                             <option>Campaign 3</option>
                             <option>Campaign 4</option>
+                            <option>Campaign 4</option>
                         </select>
                         </div>
                         <div class="form-group">
