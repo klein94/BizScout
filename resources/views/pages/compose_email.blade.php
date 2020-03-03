@@ -3,7 +3,6 @@
 
 @section('content')
 
-<!-- Compose Email -->
 <div class="row">
     <div class="col-8">
         <div class="card ">
@@ -23,7 +22,6 @@
                             <option>Campaign 2</option>
                             <option>Campaign 3</option>
                             <option>Campaign 4</option>
-                            <option>Campaign 5</option>
                         </select>
                         </div>
                         <div class="form-group">
