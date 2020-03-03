@@ -8,11 +8,27 @@
         <div class="card ">
             <div class="card-header">
                 <div class="card-body">
+                    @if ($message = Session::get('success'))
+                    <div class="alert alert-success alert-block">
+                        <button type="button" class="close" data-dismiss="alert">×</button>	
+                            <strong>{{ $message }}</strong>
+                    </div>
+                    @endif
+
+
+                    @if ($message = Session::get('error'))
+                    <div class="alert alert-danger alert-block">
+                        <button type="button" class="close" data-dismiss="alert">×</button>	
+                            <strong>{{ $message }}</strong>
+                    </div>
+                    @endif
+
                     <div class="table-responsive">
-                    <form>
+                    <form method = "POST" action="email">
+                        {{ csrf_field() }}
                         <div class="form-group">
                         <label for="exampleFormControlInput1">Email address</label>
-                        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                        <input type="email" name="emailTo" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
                         </div>
                         <div class="form-group">
                         <label for="exampleFormControlSelect1">Example select</label>
@@ -27,7 +43,7 @@
                         </div>
                         <div class="form-group">
                         <label for="exampleFormControlTextarea1">Message</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        <textarea name="message" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                         </div>
 
                         <button type="submit" class="btn btn-success" id="biSave"><i class="fas icon-simple-add">Submit</i></button>

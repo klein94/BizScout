@@ -2,52 +2,98 @@
 
 
 <script type="text/javascript" src="{{asset('js/jquery.js')}}"></script>
+<!-- <script type="text/javascript" src="https://media.twiliocdn.com/sdk/js/client/v1.9/twilio.min.js"></script> -->
 <script type="text/javascript">
   $(document).ready(function() {
-      $('.place-id').each(function(i) {
-          let place_id = $(this).attr('data');
-          $.ajax({
-              type: 'GET',
-              url: 'contact/' + place_id,
-              timeout: 5000,
-              success: (data, textStatus ) => {
-                  let jsonData = JSON.parse(data);
-                  $(this).html(jsonData['contact']);
-              },
-              error: (xhr, textStatus, errorThrown) => {
-                  $(this).html('none');
-              }
-          });
-      });
-      $('#inlineFormInputGroup').keyup(function(e) {
-        if (e.keyCode == 13) {
-          location.href = '/findleads/' + $(this).val();
-        }
-      });
-      $('.btn-save').click(function() {
-        let p = $(this).parent();
+    // var device;
+
+    // $.getJSON('https://mantis-starling-8195.twil.io/capability-token')
+    // .then(function (data) {
+    //   console.log('Token: ' + data.token);
+
+    //   // Setup Twilio.Device
+    //   device = new Twilio.Device(data.token, {
+    //     // Set Opus as our preferred codec. Opus generally performs better, requiring less bandwidth and
+    //     // providing better audio quality in restrained network conditions. Opus will be default in 2.0.
+    //     codecPreferences: ['opus', 'pcmu'],
+    //     // Use fake DTMF tones client-side. Real tones are still sent to the other end of the call,
+    //     // but the client-side DTMF tones are fake. This prevents the local mic capturing the DTMF tone
+    //     // a second time and sending the tone twice. This will be default in 2.0.
+    //     fakeLocalDTMF: true,
+    //     // Use `enableRingingState` to enable the device to emit the `ringing`
+    //     // state. The TwiML backend also needs to have the attribute
+    //     // `answerOnBridge` also set to true in the `Dial` verb. This option
+    //     // changes the behavior of the SDK to consider a call `ringing` starting
+    //     // from the connection to the TwiML backend to when the recipient of
+    //     // the `Dial` verb answers.
+    //     enableRingingState: true,
+    //   });
+
+    //   device.on('ready',function (device) {
+    //     log('Twilio.Device Ready!');
+    //     document.getElementById('call-controls').style.display = 'block';
+    //   });
+
+    //   device.on('error', function (error) {
+    //     console.log(error);
+    //   });
+
+    //   device.on('connect', function (conn) {
+    //     document.getElementById('button-call').style.display = 'none';
+    //   });
+
+    //   device.on('disconnect', function (conn) {
+    //     document.getElementById('button-call').style.display = 'inline';
+    //   });
+    // })
+    // .catch(function (err) {
+    //   console.log(err);
+    // });
+
+    $('.place-id').each(function(i) {
+        let place_id = $(this).attr('data');
         $.ajax({
-            type: 'POST',
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            },
-            url: '/save',
-            data: {
-                name: $('input[name="name"]', p).val(),
-                address: $('input[name="address"]', p).val(),
-                contact: $('input[name="contact"]', p).val(),
-                photo: $('input[name="photo"]', p).val()
-            },
+            type: 'GET',
+            url: 'contact/' + place_id,
+            timeout: 5000,
             success: (data, textStatus ) => {
-                console.log(data);
+                let jsonData = JSON.parse(data);
+                $(this).html(jsonData['contact']);
             },
             error: (xhr, textStatus, errorThrown) => {
-                // alert error
-                alert('Transaction failed.');
-                console.log(textStatus);
-                console.log(xhr.responseText);
+                $(this).html('none');
             }
         });
+    });
+    $('#inlineFormInputGroup').keyup(function(e) {
+      if (e.keyCode == 13) {
+        location.href = '/findleads/' + $(this).val();
+      }
+    });
+    $('.btn-save').click(function() {
+      let p = $(this).parent();
+      $.ajax({
+        type: 'POST',
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+        url: '/save',
+        data: {
+            name: $('input[name="name"]', p).val(),
+            address: $('input[name="address"]', p).val(),
+            contact: $('input[name="contact"]', p).val(),
+            photo: $('input[name="photo"]', p).val()
+        },
+        success: (data, textStatus ) => {
+            console.log(data);
+        },
+        error: (xhr, textStatus, errorThrown) => {
+            // alert error
+            alert('Transaction failed.');
+            console.log(textStatus);
+            console.log(xhr.responseText);
+        }
+      });
     });
   });
 </script>

@@ -71,10 +71,15 @@ class PlacesController extends Controller
         // }
     }
 
-    function sendMail() {
-        $data = ['message' => 'This is a test!'];
+    function sendMail(Request $request) {
+        $to = $request->input('emailTo');
+        $msg = $request->input('message');
 
-        Mail::to('dramirez.jbsa@gmail.com')->send(new TestEmail($data));
+        $data = ['message' => $msg];
+
+        echo $msg;
+
+        /*Mail::to($to)->send(new TestEmail($data));
 
         $sid    = "ACcd4f21caa8a689260c3acc3df2f535c0";
         $token  = "5979659fb7d54b7f3bf5d07197018622";
@@ -82,10 +87,13 @@ class PlacesController extends Controller
         $twilio = new Client($sid, $token);
 
         $message = $twilio->messages
-                        ->create("+639778043893", // to
-                                ["from" => "+15204770050", "body" => $data['message']]
-                        );
+            ->create("+639778043893", // to
+                    ["from" => "+15204770050", "body" => $data['message']]
+            );*/
 
-        print($message->sid);
+        //print($message->sid);
+
+        return back()->with('success','Email sent successfully!');
+        //->with('error','Error sending email.');
     }
 }
