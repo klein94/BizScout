@@ -3,53 +3,66 @@
 
 <script type="text/javascript" src="{{asset('js/jquery.js')}}"></script>
 
-<!-- <script type="text/javascript" src="https://media.twiliocdn.com/sdk/js/client/v1.9/twilio.min.js"></script> -->
+<script type="text/javascript" src="https://media.twiliocdn.com/sdk/js/client/v1.9/twilio.min.js"></script>
 <script type="text/javascript">
   $(document).ready(function() {
-    // var device;
+    var device;
 
-    // $.getJSON('https://mantis-starling-8195.twil.io/capability-token')
-    // .then(function (data) {
-    //   console.log('Token: ' + data.token);
+    $.getJSON('https://mantis-starling-8195.twil.io/capability-token')
+    .then(function (data) {
+      console.log('Token: ' + data.token);
 
-    //   // Setup Twilio.Device
-    //   device = new Twilio.Device(data.token, {
-    //     // Set Opus as our preferred codec. Opus generally performs better, requiring less bandwidth and
-    //     // providing better audio quality in restrained network conditions. Opus will be default in 2.0.
-    //     codecPreferences: ['opus', 'pcmu'],
-    //     // Use fake DTMF tones client-side. Real tones are still sent to the other end of the call,
-    //     // but the client-side DTMF tones are fake. This prevents the local mic capturing the DTMF tone
-    //     // a second time and sending the tone twice. This will be default in 2.0.
-    //     fakeLocalDTMF: true,
-    //     // Use `enableRingingState` to enable the device to emit the `ringing`
-    //     // state. The TwiML backend also needs to have the attribute
-    //     // `answerOnBridge` also set to true in the `Dial` verb. This option
-    //     // changes the behavior of the SDK to consider a call `ringing` starting
-    //     // from the connection to the TwiML backend to when the recipient of
-    //     // the `Dial` verb answers.
-    //     enableRingingState: true,
-    //   });
+      // Setup Twilio.Device
+      device = new Twilio.Device(data.token, {
+        // Set Opus as our preferred codec. Opus generally performs better, requiring less bandwidth and
+        // providing better audio quality in restrained network conditions. Opus will be default in 2.0.
+        codecPreferences: ['opus', 'pcmu'],
+        // Use fake DTMF tones client-side. Real tones are still sent to the other end of the call,
+        // but the client-side DTMF tones are fake. This prevents the local mic capturing the DTMF tone
+        // a second time and sending the tone twice. This will be default in 2.0.
+        fakeLocalDTMF: true,
+        // Use `enableRingingState` to enable the device to emit the `ringing`
+        // state. The TwiML backend also needs to have the attribute
+        // `answerOnBridge` also set to true in the `Dial` verb. This option
+        // changes the behavior of the SDK to consider a call `ringing` starting
+        // from the connection to the TwiML backend to when the recipient of
+        // the `Dial` verb answers.
+        enableRingingState: true,
+      });
 
-    //   device.on('ready',function (device) {
-    //     log('Twilio.Device Ready!');
-    //     document.getElementById('call-controls').style.display = 'block';
-    //   });
+      device.on('ready',function (device) {
+        document.getElementById('call-controls').style.display = 'block';
+      });
 
-    //   device.on('error', function (error) {
-    //     console.log(error);
-    //   });
+      device.on('error', function (error) {
+        console.log(error);
+      });
 
-    //   device.on('connect', function (conn) {
-    //     document.getElementById('button-call').style.display = 'none';
-    //   });
+      device.on('connect', function (conn) {
+        document.getElementById('button-call').style.display = 'none';
+      });
 
-    //   device.on('disconnect', function (conn) {
-    //     document.getElementById('button-call').style.display = 'inline';
-    //   });
-    // })
-    // .catch(function (err) {
-    //   console.log(err);
-    // });
+      device.on('disconnect', function (conn) {
+        document.getElementById('button-call').style.display = 'inline';
+      });
+
+      $('#contactBiz').click(function() {
+        var params = {
+          To: '+639778043893'
+        };
+
+        console.log('Calling ' + params.To + '...');
+        if (device) {
+          var outgoingConnection = device.connect(params);
+          outgoingConnection.on('ringing', function() {
+            log('Ringing...');
+          });
+        }
+      });
+    })
+    .catch(function (err) {
+      console.log(err);
+    });
 
     $('.place-id').each(function(i) {
         let place_id = $(this).attr('data');
@@ -240,7 +253,7 @@
         ...
       </div>
       <div class="modal-footer">
-         <button type="submit" class="btn btn-success" id="biSave"><i class="fas fa-phone"></i></button>
+         <button type="submit" class="btn btn-success" id="contactBiz"><i class="fas fa-phone"></i></button>
         <button type="submit" class="btn btn-success" id="biSave" data-toggle="modal" data-target="#Message"><i class="fas fa-envelope"></i></button>
       </div>
     </div>
