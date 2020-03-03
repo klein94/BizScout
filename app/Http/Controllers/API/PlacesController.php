@@ -7,6 +7,9 @@ use App\Http\Controllers\Controller;
 
 use App\GoogleMapsAPI\GoogleMapsAPI;
 use App\Place;
+use App\Mail\TestEmail;
+use Mail;
+use Twilio\Rest\Client;
 
 class PlacesController extends Controller
 {
@@ -66,5 +69,23 @@ class PlacesController extends Controller
         // } else {
         //     return response(['error' => $member]);
         // }
+    }
+
+    function sendMail() {
+        $data = ['message' => 'This is a test!'];
+
+        Mail::to('dramirez.jbsa@gmail.com')->send(new TestEmail($data));
+
+        $sid    = "ACcd4f21caa8a689260c3acc3df2f535c0";
+        $token  = "5979659fb7d54b7f3bf5d07197018622";
+
+        $twilio = new Client($sid, $token);
+
+        $message = $twilio->messages
+                        ->create("+639778043893", // to
+                                ["from" => "+15204770050", "body" => $data['message']]
+                        );
+
+        print($message->sid);
     }
 }
