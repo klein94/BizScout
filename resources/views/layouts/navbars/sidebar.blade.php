@@ -26,7 +26,7 @@
 
             <li>
                 <a data-toggle="collapse" href="#email-management" aria-expanded="true">
-                    <i class="fal fa-users"></i>
+                    <i class="tim-icons icon-email-85"></i>
                     <span class="nav-link-text" >{{ __('Email Management') }}</span>
                     <b class="caret mt-1"></b>
                 </a>
@@ -50,17 +50,17 @@
                     </a>   
                 </li>
 
-                <li @if ($pageSlug ?? '' ?? '' == 'inbox') class="active" @endif>
+                <!-- <li @if ($pageSlug ?? '' ?? '' == 'inbox') class="active" @endif>
                     <a href="{{ route('pages.inbox') }}" >
                         <i class="tim-icons icon-single-copy-04"></i>
                         <p>{{ _('Inbox') }}</p>
                     
                     </a>   
-                </li>
+                </li> -->
         
                 <li @if ($pageSlug ?? '' ?? '' == 'contactlist') class="active" @endif>
                     <a href="{{ route('pages.contactlist') }}" >
-                        <i class="tim-icons icon-single-copy-04"></i>
+                        <i class="tim-icons icon-single-02"></i>
                         <p>{{ _('Contact List') }}</p>
                     
                     </a>   

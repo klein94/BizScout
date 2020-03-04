@@ -34,11 +34,11 @@
                         <label for="exampleFormControlSelect1">Example select</label>
                         <select class="form-control" id="exampleFormControlSelect1">
                             <option>Select Campaign</option>
-                            <option>Campaign 1</option>
-                            <option>Campaign 2</option>
-                            <option>Campaign 3</option>
-                            <option>Campaign 4</option>
-                            <option>Campaign 4</option>
+                            <option>Example Campaign 1</option>
+                            <option>Example Campaign 2</option>
+                            <option>Example Campaign 3</option>
+                            <option>Example Campaign 4</option>
+                            <option>Example Campaign 4</option>
                         </select>
                         </div>
                         <div class="form-group">
@@ -46,8 +46,8 @@
                         <textarea name="message" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                         </div>
 
-                        <button type="submit" class="btn btn-success" id="biSave"><i class="fas icon-simple-add">Submit</i></button>
-                        <button type="submit" class="btn btn-danger" id="biSave" ><i class="icon-simple-remove"></i>Clear</button>
+                        <button type="submit" class="btn btn-success" id="biSave">Submit</button>
+                        <button type="submit" class="btn btn-danger" id="biSave" > Clear</button>
                     
                     </form>
                     </div>

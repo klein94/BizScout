@@ -28,44 +28,55 @@
             <tbody>
               <tr>
                 <td class="" colspan="5">
-                  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspCampaign Name
+                  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspExample Campaign Name 1
                 </td>
                 
-                <td class="text-center">
-                  <button type="submit" class="btn btn-fill btn-success"><i class="tim-icons icon-zoom-split"></i></button>
+                <td class="text-center"> 
+                 
+                  <button type="submit" class="btn btn-fill btn-success" data-target="#EmailTemplate" data-toggle="modal" data-target="#EmailTemplate"><i class="tim-icons icon-pencil"></i></button>
                   |
-                  <button type="submit" class="btn btn-fill btn-success"><i class="tim-icons icon-pencil"></i></button>
+                  <button type="submit" class="btn btn-fill btn-warning"><i class="tim-icons icon-trash-simple"></i></button>
                 </td>
               </tr>
                <tr>
                 <td class="" colspan="5">
-                  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspCampaign Name
+                  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspExample Campaign Name 2
                 </td>
                 
                 <td class="text-center">
-                  <button type="submit" class="btn btn-fill btn-success"><i class="tim-icons icon-zoom-split"></i></button>
-                  |
                   <button type="submit" class="btn btn-fill btn-success"><i class="tim-icons icon-pencil"></i></button>
+                  |
+                  <button type="submit" class="btn btn-fill btn-warning"><i class="tim-icons icon-trash-simple"></i></button>
                 </td>
               </tr> <tr>
                 <td class="" colspan="5">
-                  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspCampaign Name
+                  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspExample Campaign Name 3
                 </td>
                 
                 <td class="text-center">
-                  <button type="submit" class="btn btn-fill btn-success"><i class="tim-icons icon-zoom-split"></i></button>
+                <button type="submit" class="btn btn-fill btn-success"><i class="tim-icons icon-pencil"></i></button>
                   |
-                  <button type="submit" class="btn btn-fill btn-success"><i class="tim-icons icon-pencil"></i></button>
+                  <button type="submit" class="btn btn-fill btn-warning"><i class="tim-icons icon-trash-simple"></i></button>
                 </td>
               </tr> <tr>
                 <td class="" colspan="5">
-                  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspCampaign Name
+                  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspExample Campaign Name 4
                 </td>
                 
                 <td class="text-center">
-                  <button type="submit" class="btn btn-fill btn-success"><i class="tim-icons icon-zoom-split"></i></button>
+                <button type="submit" class="btn btn-fill btn-success"><i class="tim-icons icon-pencil"></i></button>
                   |
-                  <button type="submit" class="btn btn-fill btn-success"><i class="tim-icons icon-pencil"></i></button>
+                  <button type="submit" class="btn btn-fill btn-warning"><i class="tim-icons icon-trash-simple"></i></button>
+                </td>
+              </tr> <tr>
+                <td class="" colspan="5">
+                  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspExample Campaign Name 5
+                </td>
+                
+                <td class="text-center">
+                <button type="submit" class="btn btn-fill btn-success"><i class="tim-icons icon-pencil"></i></button>
+                  |
+                  <button type="submit" class="btn btn-fill btn-warning"><i class="tim-icons icon-trash-simple"></i></button>
                 </td>
               </tr> <tr>
                 <td class="" colspan="5">
@@ -73,19 +84,9 @@
                 </td>
                 
                 <td class="text-center">
-                  <button type="submit" class="btn btn-fill btn-success"><i class="tim-icons icon-zoom-split"></i></button>
+                <button type="submit" class="btn btn-fill btn-success"><i class="tim-icons icon-pencil"></i></button>
                   |
-                  <button type="submit" class="btn btn-fill btn-success"><i class="tim-icons icon-pencil"></i></button>
-                </td>
-              </tr> <tr>
-                <td class="" colspan="5">
-                  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspCompaign Name
-                </td>
-                
-                <td class="text-center">
-                  <button type="submit" class="btn btn-fill btn-success"><i class="tim-icons icon-zoom-split"></i></button>
-                  |
-                  <button type="submit" class="btn btn-fill btn-success"><i class="tim-icons icon-pencil"></i></button>
+                  <button type="submit" class="btn btn-fill btn-warning"><i class="tim-icons icon-trash-simple"></i></button>
                 </td>
               </tr>
             </tbody>
@@ -141,12 +142,41 @@
 
       </div>
       <div class="modal-footer">
-         <button type="submit" class="btn btn-success" id="biSave"><i class="fas icon-simple-add">Add</i></button>
-        <button type="submit" class="btn btn-success" id="biSave" data-toggle="modal" data-target="#Close"><i class="icon-simple-remove"></i>Clear</button>
+         <button type="submit" class="btn btn-success" id="biSave">Add</button>
+        <button type="submit" class="btn btn-danger" id="biSave" data-toggle="modal" data-target="#Close">Clear</button>
       </div>
     </div>
   </div>
 </div>
 
+<!-- EMAIL CONTENT TEMPLATE MODAL -->
+<div class="modal fade" id="EmailTemplate" tabindex="-1" role="dialog" aria-labelledby="EmailContent" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Email Template</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="exampleFormControlInput1">Campaign Name</label>
+              <input type="text" class="form-control" id="CampaignName" placeholder="Campaign Name">
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlTextarea1">Message</label>
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+          </form>
 
+      </div>
+      <div class="modal-footer">
+         <button type="submit" class="btn btn-success" id="biSave">Submit</button>
+        <button type="submit" class="btn btn-danger" id="biSave" data-toggle="modal" data-target="#Close">Clear</button>
+      </div>
+    </div>
+  </div>
+</div>
   @endsection 

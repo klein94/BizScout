@@ -244,7 +244,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Message</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Make a Call</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -254,7 +254,10 @@
       </div>
       <div class="modal-footer">
          <button type="submit" class="btn btn-success" id="contactBiz"><i class="fas fa-phone"></i></button>
-        <button type="submit" class="btn btn-success" id="biSave" data-toggle="modal" data-target="#Message"><i class="fas fa-envelope"></i></button>
+        <!-- <button type="submit" class="btn btn-success" id="biSave" data-toggle="modal" data-target="#Message"><i class="fas fa-envelope"></i></button> -->
+        <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
+            <i class="fa fa-times"></i>
+        </button>
       </div>
     </div>
   </div>
