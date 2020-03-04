@@ -13,8 +13,7 @@
         "laravel-frontend-presets/white-dashboard": "^1.0",
         "laravel/framework": "^6.0",
         "laravel/tinker": "^1.0",
-        "scottybo/laravel-google-my-business": "^2.0",
-        "twilio/sdk": "^5.39"
+        "scottybo/laravel-google-my-business": "^2.0"
     },
     "require-dev": {
         "facade/ignition": "^1.4",

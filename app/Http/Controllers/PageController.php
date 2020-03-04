@@ -2,12 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-
-use App\GoogleMapsAPI\GoogleMapsAPI;
-use App\Place;
-
 class PageController extends Controller
 {
     /**
@@ -82,43 +76,16 @@ class PageController extends Controller
 
     public function prospects()
     {
-        $places = Place::all();
-
-        return view('pages.prospect', ['data' => $places]);
+        return view('pages.prospect');
     }
  /**
      * Display prospect page
      *
      * @return \Illuminate\View\View
      */
-     public function findleads($keyword = "coffeeshop")
+     public function findleads()
     {
-        $results = new GoogleMapsAPI();
-        // return view('dashboard', ['data' => $results->search('establishment', 'hardware')]);
-        return view('pages.findleads', ['data' => $results->search('establishment', $keyword)]);
-    }
-
-    public function getContact($place_id) {
-        // contact/ChIJpwQQAWcW-TIResPz71qUQJQ
-        $results = new GoogleMapsAPI();
-        echo $results->getContact($place_id);
-    }
-
-    public function store(Request $request)
-    {
-        $place = new Place;
-        $place->name = $request->input('name');
-        $place->address = $request->input('address');
-        $place->contact = $request->input('contact');
-        $place->photo = $request->input('photo');
-        // $place->type = $request->input('type');
-        // $place->keyword = $request->input('keyword');
-
-        if ($place->save()) {
-            return response(['success' => $place]);
-        } else {
-            return response(['error' => $place]);
-        }
+        return view('pages.findleads');
     }
  /**
      * Display findleads page

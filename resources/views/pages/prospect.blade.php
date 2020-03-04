@@ -28,10 +28,9 @@
               </tr>
             </thead>
             <tbody>
-              @foreach ($data as $place)
               <tr>
                 <td class="text-center">
-                  {{ $place['name'] }}
+                  Kc Cups Coffee
                 </td>
                 <td class="text-center">
                   <button type="submit" class="btn btn-fill btn-warning">Contacted</button>
@@ -46,8 +45,7 @@
                   <button type="submit" class="btn btn-fill btn-success">EDIT</button>
                 </td>
               </tr>
-              @endforeach
-              <!-- <tr>
+              <tr>
                 <td class="text-center">
                   Minerva Hooper
                 </td>
@@ -148,7 +146,7 @@
                 <td class="text-center">
                   <button type="submit" class="btn btn-fill btn-success">EDIT</button>
                 </td>
-              </tr> -->
+              </tr>
             </tbody>
           </table>
         </div>
