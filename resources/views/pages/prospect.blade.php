@@ -34,7 +34,12 @@
                   {{ $place['name'] }}
                 </td>
                 <td class="text-center">
-                  <button type="submit" class="btn btn-secondary btn-lg disabled">Contacted</button>
+                  @if ($place['status'] == 0)
+                  <button type="submit" class="btn btn-secondary btn-lg disabled">
+                  @else
+                  <button type="submit" class="btn btn-secondary btn-lg">
+                  @endif
+                  Contacted</button>
                 </td>
                 <td class="text-center">
                   <button type="button" rel="tooltip" title="" class="btn btn-link" data-original-title="Edit Task" data-toggle="modal" data-target="#ViewDetails">
