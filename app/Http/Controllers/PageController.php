@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 
 use App\GoogleMapsAPI\GoogleMapsAPI;
 use App\Place;
+use App\EmailCampaign;
 
 class PageController extends Controller
 {
@@ -106,18 +107,22 @@ class PageController extends Controller
 
     public function store(Request $request)
     {
-        $place = new Place;
-        $place->name = $request->input('name');
-        $place->address = $request->input('address');
-        $place->contact = $request->input('contact');
-        $place->photo = $request->input('photo');
-        // $place->type = $request->input('type');
-        // $place->keyword = $request->input('keyword');
+        if (!Place::where('name', '=', $request->input('name'))->exists()) {
+            $place = new Place;
+            $place->name = $request->input('name');
+            $place->address = $request->input('address');
+            $place->contact = $request->input('contact');
+            $place->photo = $request->input('photo');
+            // $place->type = $request->input('type');
+            // $place->keyword = $request->input('keyword');
 
-        if ($place->save()) {
-            return response(['success' => $place]);
+            if ($place->save()) {
+                return response(['success' => $place]);
+            } else {
+                return response(['error' => $place]);
+            }
         } else {
-            return response(['error' => $place]);
+            return response(['error' => 'Place already exists.']);
         }
     }
  /**
@@ -128,7 +133,9 @@ class PageController extends Controller
 
   public function email_campaign()
     {
-        return view('pages.email_campaign');
+        $ec = EmailCampaign::all();
+
+        return view('pages.email_campaign', ['data' => $ec]);
     }
 
     public function contactlist()
@@ -138,7 +145,8 @@ class PageController extends Controller
 
     public function compose_email()
     {
-        return view('pages.compose_email');
+        $ec = EmailCampaign::all();
+        return view('pages.compose_email', ['data' => $ec]);
     }
 
     public function inbox()

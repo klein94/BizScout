@@ -1,6 +1,96 @@
 @extends('layouts.app', ['page' => __('Email Campaign'), 'pageSlug' => 'email_campaign'])
 
 
+<script type="text/javascript" src="{{asset('js/jquery.js')}}"></script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('#saveCampaign').click(function() {
+      $.ajax({
+        type: 'PUT',
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+        url: '/email-campaign/save',
+        data: {
+            id: $('#campaignID').val(),
+            name: $('#campaignName').val(),
+            subject: $('#campaignSubject').val(),
+            message: $('#campaignMessage').val()
+        },
+        success: (data, textStatus ) => {
+          location.href = "";
+        },
+        error: (xhr, textStatus, errorThrown) => {
+            // alert error
+            alert('Transaction failed.');
+            console.log(textStatus);
+            console.log(xhr.responseText);
+        }
+      });
+    });
+
+    $('#addCampaign').click(function() {
+      $.ajax({
+        type: 'POST',
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+        url: '/email-campaign/save',
+        data: {
+            name: $('#inputNewCampaign').val()
+        },
+        success: (data, textStatus ) => {
+            location.href = "";
+        },
+        error: (xhr, textStatus, errorThrown) => {
+            // alert error
+            alert('Transaction failed.');
+            console.log(textStatus);
+            console.log(xhr.responseText);
+        }
+      });
+    });
+
+    $('.edit-campaign').click(function() {
+      let p = $(this).parent();
+      let id = $('input[name="id"]', p).val();
+      let name = $('input[name="name"]', p).val();
+      let subject = $('input[name="subject"]', p).val();
+      let message = $('input[name="message"]', p).val();
+      
+      $('#campaignID').val(id);
+      $('#campaignName').val(name);
+      $('#campaignSubject').val(subject);
+      $('#campaignMessage').val(message);
+    });
+
+    $('.delete-campaign').click(function() {
+      let p = $(this).parent();
+      let id = $('input[name="id"]', p).val();
+
+      $.ajax({
+        type: 'DELETE',
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+        url: '/email-campaign/' + id,
+        success: (data, textStatus ) => {
+            location.href = "";
+        },
+        error: (xhr, textStatus, errorThrown) => {
+            // alert error
+            alert('Transaction failed.');
+            console.log(textStatus);
+            console.log(xhr.responseText);
+        }
+      });
+    });
+
+
+    
+  });
+</script>
+
 @section('content')
 <div class="row">
   
@@ -26,69 +116,23 @@
               </tr>
             </thead>
             <tbody>
+              @foreach ($data as $item)
               <tr>
                 <td class="" colspan="5">
-                  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspExample Campaign Name 1
+                  {{ $item['name'] }}
                 </td>
                 
                 <td class="text-center"> 
-                 
-                  <button type="submit" class="btn btn-fill btn-success" data-target="#EmailTemplate" data-toggle="modal" data-target="#EmailTemplate"><i class="tim-icons icon-pencil"></i></button>
+                  <input type="hidden" name="id" value="{{ $item['id'] }}" />
+                  <input type="hidden" name="name" value="{{ $item['name'] }}" />
+                  <input type="hidden" name="subject" value="{{ $item['subject'] }}" />
+                  <input type="hidden" name="message" value="{{ $item['message'] }}" />
+                  <button type="submit" class="btn btn-fill btn-success edit-campaign" data-target="#EmailTemplate" data-toggle="modal" data-target="#EmailTemplate"><i class="tim-icons icon-pencil"></i></button>
                   |
-                  <button type="submit" class="btn btn-fill btn-warning"><i class="tim-icons icon-trash-simple"></i></button>
+                  <button type="submit" class="btn btn-fill btn-warning delete-campaign"><i class="tim-icons icon-trash-simple"></i></button>
                 </td>
               </tr>
-               <tr>
-                <td class="" colspan="5">
-                  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspExample Campaign Name 2
-                </td>
-                
-                <td class="text-center">
-                  <button type="submit" class="btn btn-fill btn-success"><i class="tim-icons icon-pencil"></i></button>
-                  |
-                  <button type="submit" class="btn btn-fill btn-warning"><i class="tim-icons icon-trash-simple"></i></button>
-                </td>
-              </tr> <tr>
-                <td class="" colspan="5">
-                  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspExample Campaign Name 3
-                </td>
-                
-                <td class="text-center">
-                <button type="submit" class="btn btn-fill btn-success"><i class="tim-icons icon-pencil"></i></button>
-                  |
-                  <button type="submit" class="btn btn-fill btn-warning"><i class="tim-icons icon-trash-simple"></i></button>
-                </td>
-              </tr> <tr>
-                <td class="" colspan="5">
-                  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspExample Campaign Name 4
-                </td>
-                
-                <td class="text-center">
-                <button type="submit" class="btn btn-fill btn-success"><i class="tim-icons icon-pencil"></i></button>
-                  |
-                  <button type="submit" class="btn btn-fill btn-warning"><i class="tim-icons icon-trash-simple"></i></button>
-                </td>
-              </tr> <tr>
-                <td class="" colspan="5">
-                  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspExample Campaign Name 5
-                </td>
-                
-                <td class="text-center">
-                <button type="submit" class="btn btn-fill btn-success"><i class="tim-icons icon-pencil"></i></button>
-                  |
-                  <button type="submit" class="btn btn-fill btn-warning"><i class="tim-icons icon-trash-simple"></i></button>
-                </td>
-              </tr> <tr>
-                <td class="" colspan="5">
-                  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspCompaign Name
-                </td>
-                
-                <td class="text-center">
-                <button type="submit" class="btn btn-fill btn-success"><i class="tim-icons icon-pencil"></i></button>
-                  |
-                  <button type="submit" class="btn btn-fill btn-warning"><i class="tim-icons icon-trash-simple"></i></button>
-                </td>
-              </tr>
+              @endforeach
             </tbody>
           </table>
         </div>
@@ -133,18 +177,20 @@
         </button>
       </div>
       <div class="modal-body">
-
-      <div class="col-sm-5">
-        <div class="form-group">
-            <input type="text" value="" placeholder="Input Campaign" class="form-control" />
+      <form method="POST" action="">
+        {{ csrf_field() }}
+        <div class="col-sm-5">
+          <div class="form-group">
+              <input type="text" value="" id="inputNewCampaign" placeholder="Input Campaign" class="form-control" />
+          </div>
         </div>
-      </div>
 
-      </div>
-      <div class="modal-footer">
-         <button type="submit" class="btn btn-success" id="biSave">Add</button>
-        <button type="submit" class="btn btn-danger" id="biSave" data-toggle="modal" data-target="#Close">Clear</button>
-      </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-success" id="addCampaign">Add</button>
+          <button type="submit" class="btn btn-danger" data-toggle="modal" data-target="#Close">Clear</button>
+        </div>
+      </form>
     </div>
   </div>
 </div>
@@ -162,19 +208,24 @@
       <div class="modal-body">
           <form>
             <div class="form-group">
-              <label for="exampleFormControlInput1">Campaign Name</label>
-              <input type="text" class="form-control" id="CampaignName" placeholder="Campaign Name">
+              <label for="exampleFormControlInput1">Name</label>
+              <input type="hidden" class="form-control" id="campaignID">
+              <input type="text" class="form-control" id="campaignName" placeholder="Campaign Name">
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlInput2">Subject</label>
+              <input type="text" class="form-control" id="campaignSubject" placeholder="Campaign Subject">
             </div>
             <div class="form-group">
               <label for="exampleFormControlTextarea1">Message</label>
-              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+              <textarea class="form-control" id="campaignMessage" rows="3"></textarea>
             </div>
           </form>
 
       </div>
       <div class="modal-footer">
-         <button type="submit" class="btn btn-success" id="biSave">Submit</button>
-        <button type="submit" class="btn btn-danger" id="biSave" data-toggle="modal" data-target="#Close">Clear</button>
+         <button class="btn btn-success" id="saveCampaign">Submit</button>
+        <button class="btn btn-danger" id="biClear" data-toggle="modal" data-target="#Close">Clear</button>
       </div>
     </div>
   </div>

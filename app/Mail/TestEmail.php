@@ -21,8 +21,8 @@ class TestEmail extends Mailable
     public function build()
     {
         $address = 'sendgrid@example.com';
-        $subject = 'This is a demo!';
-        $name = 'Jane Doe';
+        $subject = $this->data['subject'];
+        $name = 'Bizscout Admin';
         
         return $this->view('emails.test')
                     ->from($address, $name)

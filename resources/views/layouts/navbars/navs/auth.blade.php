@@ -82,7 +82,7 @@
             <div class="modal-header">
                 <!-- <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="{{ __('SEARCH') }}"> -->
                
-                <input type="text" class="form-control" id="autocomplete" list="leads" placeholder="{{ __('SEARCH BUSINESS CATEGORY') }}">
+                <input type="text" class="form-control" id="inlineFormInputGroup" list="leads" placeholder="{{ __('SEARCH BUSINESS CATEGORY') }}">
                 <datalist id="leads"></datalist>
                 <button type="button" class="close" data-dismiss="modal" aria-label="{{ __('Close') }}">
                     <i class="tim-icons icon-simple-remove"></i>
