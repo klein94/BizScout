@@ -10,6 +10,7 @@ class Place extends Model
         'name',
         'address',
         'contact',
+        'status',
         'photo',
         'type',
         'keyword'

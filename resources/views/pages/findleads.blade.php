@@ -51,7 +51,8 @@
 
       $('#contactBiz').click(function() {
         var params = {
-          To: '+639778043893'
+          //To: '+639778043893'
+          To: '+639359186078'
         };
 
         console.log('Calling ' + params.To + '...');
@@ -117,7 +118,7 @@
         error: (xhr, textStatus, errorThrown) => {
             // alert error
             alert('Transaction failed.');
-            console.log(textStatus);
+            console.log(textStatus);  
             console.log(xhr.responseText);
         }
       });
