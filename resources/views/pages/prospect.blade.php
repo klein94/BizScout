@@ -35,9 +35,9 @@
                 </td>
                 <td class="text-center">
                   @if ($place['status'] == 0)
-                  <button type="submit" class="btn btn-secondary btn-lg disabled">
+                  <button type="submit" class="btn btn-success btn-lg ">
                   @else
-                  <button type="submit" class="btn btn-secondary btn-lg">
+                  <button type="submit" class="btn btn-secondary btn-lg  disabled">
                   @endif
                   Contacted</button>
                 </td>
