@@ -1,5 +1,5 @@
 <?php
-
+use App\Events\WebsocketDemoEvent;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,6 +12,7 @@
 */
 
 Route::get('/', function () {
+	
     return view('welcome');
 });
 Auth::routes();
@@ -29,8 +30,17 @@ Route::group(['middleware' => 'auth'], function () {
 		Route::get('typography', ['as' => 'pages.typography', 'uses' => 'PageController@typography']);
 		Route::get('upgrade', ['as' => 'pages.upgrade', 'uses' => 'PageController@upgrade']);
 		Route::get('prospects', ['as' => 'pages.prospects', 'uses' => 'PageController@prospects']);
-		Route::get('findleads', ['as' => 'pages.findleads', 'uses' => 'PageController@findleads']);
+		Route::get('findleads/{id?}', ['as' => 'pages.findleads', 'uses' => 'PageController@findleads']);
+		Route::get('contact/{id}', ['as' => 'pages.contact', 'uses' => 'PageController@getContact']);
+		Route::post('save', ['as' => 'pages.save', 'uses' => 'PageController@store']);
+		Route::get('email_campaign', ['as' => 'pages.email_campaign', 'uses' => 'PageController@email_campaign']);
+		Route::get('contactlist', ['as' => 'pages.contactlist', 'uses' => 'PageController@contactlist']);
+		Route::get('compose_email', ['as' => 'pages.compose_email', 'uses' => 'PageController@compose_email']);
+		Route::get('inbox', ['as' => 'pages.inbox', 'uses' => 'PageController@inbox']);
+		Route::post('email', ['as' => 'pages.email', 'uses' => 'API\PlacesController@sendMail']);
 		Route::get('emailmanagement', ['as' => 'pages.emailmanagement', 'uses' => 'PageController@emailmanagement']);
+		Route::get('chat', ['as' => 'pages.chat', 'uses' => 'PageController@chat']);
+		broadcast(new WebsocketDemoEvent('some data'));
 });
 
 Route::group(['middleware' => 'auth'], function () {
