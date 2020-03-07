@@ -45,7 +45,7 @@ Route::group(['middleware' => 'auth'], function () {
 		Route::get('contacted/{id}', ['as' => 'pages.contacted', 'uses' => 'API\PlacesController@contacted']);
 		Route::get('emailmanagement', ['as' => 'pages.emailmanagement', 'uses' => 'PageController@emailmanagement']);
 		Route::get('chat', ['as' => 'pages.chat', 'uses' => 'PageController@chat']);
-		broadcast(new WebsocketDemoEvent('some data'));
+		//broadcast(new WebsocketDemoEvent('some data'));
 });
 
 Route::group(['middleware' => 'auth'], function () {

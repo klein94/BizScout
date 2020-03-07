@@ -34,4 +34,3 @@ class ChatsController extends Controller
         return ['status' => 'success'];
     }
 }
-?>

@@ -1,5 +1,5 @@
 <template>
-   <div  class="row">
+   <div class="row">
 
        <div class="col-8">
            <div class="card card-default">
@@ -43,7 +43,7 @@
 
 <script>
     export default {
-       
+
         props:['user'],
 
         data() {
@@ -110,6 +110,5 @@
                     .whisper('typing', this.user);
             }
         }
-        
     }
 </script>
