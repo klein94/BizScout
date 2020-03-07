@@ -50,13 +50,7 @@
                     </a>   
                 </li>
 
-                <!-- <li @if ($pageSlug ?? '' ?? '' == 'inbox') class="active" @endif>
-                    <a href="{{ route('pages.inbox') }}" >
-                        <i class="tim-icons icon-single-copy-04"></i>
-                        <p>{{ _('Inbox') }}</p>
-                    
-                    </a>   
-                </li> -->
+               
         
                 <li @if ($pageSlug ?? '' ?? '' == 'contactlist') class="active" @endif>
                     <a href="{{ route('pages.contactlist') }}" >

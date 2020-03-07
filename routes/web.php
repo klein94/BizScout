@@ -12,14 +12,20 @@ use App\Events\WebsocketDemoEvent;
 */
 
 Route::get('/', function () {
-	
+	broadcast(new WebsocketDemoEvent('some data'));
     return view('welcome');
 });
-Auth::routes();
+
 
 Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
 Route::get('/test', 'HomeController@authRedirect');
-Route::get('/chats', 'ChatsController@index');
+
+//Route::get('/chats', 'ChatsController@index');
+
+
+
+
+Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['middleware' => 'auth'], function () {
 		Route::get('icons', ['as' => 'pages.icons', 'uses' => 'PageController@icons']);
@@ -44,8 +50,11 @@ Route::group(['middleware' => 'auth'], function () {
 		Route::delete('email-campaign/{id}', ['as' => 'pages.delete_email_campaign', 'uses' => 'EmailCampaignController@destroy']);
 		Route::get('contacted/{id}', ['as' => 'pages.contacted', 'uses' => 'API\PlacesController@contacted']);
 		Route::get('emailmanagement', ['as' => 'pages.emailmanagement', 'uses' => 'PageController@emailmanagement']);
-		Route::get('chat', ['as' => 'pages.chat', 'uses' => 'PageController@chat']);
-		//broadcast(new WebsocketDemoEvent('some data'));
+
+		Route::get('chats', ['as' => 'pages.chat', 'uses' => 'ChatsController@index']);
+		Route::get('messages', ['as' => 'pages.chat', 'uses' => 'ChatsController@fetchMessages']);
+		Route::post('messages', ['as' => 'pages.chat', 'uses' => 'ChatsController@sendMessage']);
+		Auth::routes();
 });
 
 Route::group(['middleware' => 'auth'], function () {

@@ -59691,7 +59691,7 @@ Vue.use(vue_chat_scroll__WEBPACK_IMPORTED_MODULE_0___default.a);
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-Vue.component('chats', __webpack_require__(/*! ./components/ChatsComponent.vue */ "./resources/js/components/ChatsComponent.vue")["default"]);
+Vue.component('chat', __webpack_require__(/*! ./components/ChatsComponent.vue */ "./resources/js/components/ChatsComponent.vue")["default"]);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -59699,7 +59699,7 @@ Vue.component('chats', __webpack_require__(/*! ./components/ChatsComponent.vue *
  */
 
 var app = new Vue({
-  el: '#app'
+  el: '#app32'
 });
 
 /***/ }),
