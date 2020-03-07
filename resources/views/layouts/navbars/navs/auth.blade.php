@@ -26,7 +26,7 @@
                         <span class="d-lg-none d-md-block">{{ __('Search') }}</span>
                     </button>
                 </li>
-                <li class="dropdown nav-item">
+                <li class="dropdown nav-item hidden">
                     <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
                         <div class="notification d-none d-lg-block d-xl-block"></div>
                         <i class="tim-icons icon-sound-wave"></i>
@@ -82,7 +82,7 @@
             <div class="modal-header">
                 <!-- <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="{{ __('SEARCH') }}"> -->
                
-                <input type="text" class="form-control" id="autocomplete" list="leads" placeholder="{{ __('SEARCH BUSINESS CATEGORY') }}">
+                <input type="text" class="form-control" id="inlineFormInputGroup" list="leads" placeholder="{{ __('SEARCH BUSINESS CATEGORY') }}">
                 <datalist id="leads"></datalist>
                 <button type="button" class="close" data-dismiss="modal" aria-label="{{ __('Close') }}">
                     <i class="tim-icons icon-simple-remove"></i>

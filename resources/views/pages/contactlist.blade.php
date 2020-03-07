@@ -7,7 +7,7 @@
   <div class="col-md-12">
     <div class="card ">
       <div class="card-header">
-    <button type="submit" class="btn btn-fill btn-primary"  data-toggle="modal" data-target="#AddEmail">Add</button>
+    <button type="submit" class="btn btn-fill btn-success"  data-toggle="modal" data-target="#AddEmail">Add</button>
       </div>
       <div class="card-body">
         <div class="table-responsive">
@@ -188,12 +188,12 @@
 </div>
     <!-- Contact end -->
 
-  <!-- ADD EMAIL CAMPAIGN MODAL -->
+  <!-- ADD Contact List MODAL -->
   <div class="modal fade" id="AddEmail" tabindex="-1" role="dialog" aria-labelledby="AddEmail" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Create Campaign Name</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Add Contact List</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -202,14 +202,25 @@
 
       <div class="col-sm-5">
         <div class="form-group">
-            <input type="text" value="" placeholder="Input Campaign" class="form-control" />
+
+            <form>
+            <div class="form-group">
+              <label for="exampleFormControlInput1"> Company Name</label>
+              <input type="text" value="" placeholder="Input Contact" class="form-control" />
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlTextarea1"> Company Email</label>
+              <input type="text" value="" placeholder="Input Email" class="form-control" />
+            </div>
+          </form>
+          
         </div>
       </div>
 
       </div>
       <div class="modal-footer">
-         <button type="submit" class="btn btn-success" id="biSave"><i class="fas icon-simple-add">Add</i></button>
-        <button type="submit" class="btn btn-success" id="biSave" data-toggle="modal" data-target="#Close"><i class="icon-simple-remove"></i>Clear</button>
+         <button type="submit" class="btn btn-success" id="biSave">Add</button>
+        <button type="submit" class="btn btn-danger" id="biSave" data-toggle="modal" data-target="#Close">Clear</button>
       </div>
     </div>
   </div>

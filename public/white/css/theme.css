@@ -63,3 +63,6 @@
 }
 
 /*custom css*/
+.hidden{
+  display: none;
+}

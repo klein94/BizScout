@@ -34,7 +34,12 @@
                   {{ $place['name'] }}
                 </td>
                 <td class="text-center">
-                  <button type="submit" class="btn btn-fill btn-default">Contacted</button>
+                  @if ($place['status'] == 0)
+                  <button type="submit" class="btn btn-success btn-lg ">
+                  @else
+                  <button type="submit" class="btn btn-secondary btn-lg  disabled">
+                  @endif
+                  Contacted</button>
                 </td>
                 <td class="text-center">
                   <button type="button" rel="tooltip" title="" class="btn btn-link" data-original-title="Edit Task" data-toggle="modal" data-target="#ViewDetails">
@@ -43,7 +48,7 @@
                   </button>
                 </td>
                 <td class="text-center">
-                  <button type="submit" class="btn btn-fill btn-success">EDIT</button>
+                  <button type="submit" class="btn btn-fill btn-danger" data-toggle="modal" data-target="#Edit"><i class="tim-icons icon-settings-gear-63"></i></button>
                 </td>
               </tr>
               @endforeach
@@ -172,6 +177,31 @@
       <div class="modal-footer">
          <button type="submit" class="btn btn-success" id="biSave"><i class="fas fa-phone"></i></button>
         <button  type="button" class="btn btn-btn-link"  data-toggle="modal" data-target="#EmailContent" data-toggle="modal" data-target="#EmailContent"><i class="fas fa-envelope"></i></button>
+        <!-- <button type="button" rel="tooltip" title="" class="btn btn-link" data-original-title="Edit Task" data-toggle="modal" data-target="#EmailContent">test </button>
+       -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Settings MODAL -->
+<div class="modal fade" id="Edit" tabindex="-1" role="dialog" aria-labelledby="Edit" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Change Status</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <button type="button" class="btn btn-default">Contacted</button>
+      <button type="button" class="btn btn-danger">Cannot be reached</button>
+      </div>
+      <div class="modal-footer">
+         <!-- <button type="submit" class="btn btn-success" id="biSave"><i class="fas fa-phone"></i></button>
+        <button  type="button" class="btn btn-btn-link"  data-toggle="modal" data-target="#EmailContent" data-toggle="modal" data-target="#EmailContent"><i class="fas fa-envelope"></i></button>
+         -->
         <!-- <button type="button" rel="tooltip" title="" class="btn btn-link" data-original-title="Edit Task" data-toggle="modal" data-target="#EmailContent">test </button>
        -->
       </div>

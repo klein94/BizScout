@@ -29,56 +29,23 @@ class PlacesController extends Controller
         echo $results->getPhoto($photo_ref);
     }
 
-    public function store(Request $request)
-    {
-        $place = new Place;
-        $place->name = $request->input('name');
-        $place->address = $request->input('address');
-        $place->contact = $request->input('contact');
-        $place->photo = $request->input('photo');
-        // $place->type = $request->input('type');
-        // $place->keyword = $request->input('keyword');
-
-        //return response(['success' => $place]);
-
-        if ($place->save()) {
-            return response(['success' => $place]);
-        } else {
-            return response(['error' => $place]);
-        }
-
-        // $member = $request->isMethod('put') ? 
-        //     Member::findOrFail($request->id) : new Member;
-
-        // $member->firstname = $request->input('firstname');
-        // $member->lastname = $request->input('lastname');
-        // $member->middlename = $request->input('middlename');
-        // $member->age = $request->input('age');
-        // $member->birthdate = $request->input('birthdate');
-        // $member->address = $request->input('address');
-        // $member->status = $request->input('status');
-        // $member->classification_id = $request->input('classification_id');
-        // $member->contact = $request->input('contact');
-        // $member->picture = $request->input('picture');
-        
-        // $reqType = $request->isMethod('put') ? 'update' : 'create';
-
-        // if ($member->save()) {
-        //     return new MemberResource($member);
-        // } else {
-        //     return response(['error' => $member]);
-        // }
+    public function contacted($id)
+    {  
+        $place = Place::where('name', '=', $id)->first();
+        $place->status = 1;
+        $place->save();
     }
 
     function sendMail(Request $request) {
         $to = $request->input('emailTo');
+        $subject = $request->input('subject');
         $msg = $request->input('message');
 
-        $data = ['message' => $msg];
+        $data = ['subject' => $subject,'message' => $msg];
 
-        echo $msg;
+        // echo $msg;
 
-        /*Mail::to($to)->send(new TestEmail($data));
+        Mail::to($to)->send(new TestEmail($data));
 
         $sid    = "ACcd4f21caa8a689260c3acc3df2f535c0";
         $token  = "5979659fb7d54b7f3bf5d07197018622";
@@ -86,9 +53,10 @@ class PlacesController extends Controller
         $twilio = new Client($sid, $token);
 
         $message = $twilio->messages
-            ->create("+639778043893", // to
+            //to 
+            ->create("+639359186078", 
                     ["from" => "+15204770050", "body" => $data['message']]
-            );*/
+            );
 
         //print($message->sid);
 

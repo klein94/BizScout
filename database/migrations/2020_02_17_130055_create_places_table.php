@@ -19,6 +19,9 @@ class CreatePlacesTable extends Migration
             $table->text('address')->nullable();
             $table->string('contact')->nullable();
             $table->text('photo')->nullable();
+            // $table->integer('status')->detault(0);
+            $table->integer('status')->nullable();
+            
 
             # search category
             $table->string('type')->nullable();

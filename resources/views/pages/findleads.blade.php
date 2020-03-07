@@ -7,6 +7,7 @@
 <script type="text/javascript">
   $(document).ready(function() {
     var device;
+    var contactID = 0;
 
     $.getJSON('https://mantis-starling-8195.twil.io/capability-token')
     .then(function (data) {
@@ -31,7 +32,7 @@
       });
 
       device.on('ready',function (device) {
-        document.getElementById('call-controls').style.display = 'block';
+        // document.getElementById('call-controls').style.display = 'block';
       });
 
       device.on('error', function (error) {
@@ -39,30 +40,43 @@
       });
 
       device.on('connect', function (conn) {
-        document.getElementById('button-call').style.display = 'none';
+        
+        markContact();
+        // document.getElementById('button-call').style.display = 'none';
       });
 
       device.on('disconnect', function (conn) {
-        document.getElementById('button-call').style.display = 'inline';
+        // document.getElementById('button-call').style.display = 'inline';
       });
 
       $('#contactBiz').click(function() {
         var params = {
-          To: '+639778043893'
+          //To: '+639778043893'
+          To: '+639359186078'
         };
 
         console.log('Calling ' + params.To + '...');
         if (device) {
           var outgoingConnection = device.connect(params);
           outgoingConnection.on('ringing', function() {
-            log('Ringing...');
+            //log('Ringing...');
           });
         }
+      });
+
+      $('#hangup').click(function() {
+        device.disconnectAll();
       });
     })
     .catch(function (err) {
       console.log(err);
     });
+
+    // $('#ContactPopUp'). on('show. bs. modal', function() {
+      
+    // }
+
+    
 
     $('.place-id').each(function(i) {
         let place_id = $(this).attr('data');
@@ -104,11 +118,43 @@
         error: (xhr, textStatus, errorThrown) => {
             // alert error
             alert('Transaction failed.');
+            console.log(textStatus);  
+            console.log(xhr.responseText);
+        }
+      });
+
+      
+    });
+
+    $('.btnContactModal').click(function() {
+      alert('test');
+      let p = $(this).parent();
+      let name = $('input[name="name"]', p).val();
+      contactID = name;
+
+      $('#ContactPopUp').modal('show');
+      console.log(contactID);
+    });
+
+    function markContact() {
+      
+      $.ajax({
+        type: 'get',
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+        url: '/contacted/' + contactID,
+        success: (data, textStatus ) => {
+            //location.href = "";
+        },
+        error: (xhr, textStatus, errorThrown) => {
+            // alert error
+            alert('Transaction failed.');
             console.log(textStatus);
             console.log(xhr.responseText);
         }
       });
-    });
+    }
   });
 </script>
 
@@ -134,109 +180,12 @@
           <input type="hidden" name="contact" value="{{ $item['contact'] }}" />
           <input type="hidden" name="photo" value="{{ $item['photo'] }}" />
           <button type="submit" class="btn btn-fill btn-success btn-save">Add To List</button>
-          <button type="submit" class="btn btn-fill btn-success" data-toggle="modal" data-target="#ContactPopUp">Contact</button>
+          <button type="button" class="btn btn-fill btn-success btnContactModal">Contact</button>
         </div>
       </div>
     </div>
   </div>
   @endforeach
-
-  <!-- <div class="col-md-6">
-    <div class="card ">
-      <div class="card-header">
-        <h4 class="card-title">Find Leads</h4>
-      </div>
-      <div class="card-body">
-        <div class="table-responsive">
-          <h4>
-            <strong> Business name:</strong> KC Cups Coffee Shop <br>
-            <strong> E-mail:</strong> kc@gmail.com <br>
-            <strong> Contact #:</strong> +63 945 256 9595 <br>
-            <strong> Address:</strong> Matina Davao City 
-          </h4>
-          <button type="submit" class="btn btn-fill btn-success">Add To List</button>
-          <button type="submit" class="btn btn-fill btn-success">Contact</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-6">
-    <div class="card ">
-      <div class="card-header">
-        <h4 class="card-title">Find Leads</h4>
-      </div>
-      <div class="card-body">
-        <div class="table-responsive">
-           <h4>
-            <strong> Business name:</strong> KC Cups Coffee Shop <br>
-            <strong> E-mail:</strong> kc@gmail.com <br>
-            <strong> Contact #:</strong> +63 945 256 9595 <br>
-            <strong> Address:</strong> Matina Davao City 
-          </h4>
-          <button type="submit" class="btn btn-fill btn-success">Add To List</button>
-          <button type="submit" class="btn btn-fill btn-success">Contact</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-6">
-    <div class="card ">
-      <div class="card-header">
-        <h4 class="card-title">Find Leads</h4>
-      </div>
-      <div class="card-body">
-        <div class="table-responsive">
-           <h4>
-            <strong> Business name:</strong> KC Cups Coffee Shop <br>
-            <strong> E-mail:</strong> kc@gmail.com <br>
-            <strong> Contact #:</strong> +63 945 256 9595 <br>
-            <strong> Address:</strong> Matina Davao City 
-          </h4>
-          <button type="submit" class="btn btn-fill btn-success">Add To List</button>
-          <button type="submit" class="btn btn-fill btn-success">Contact</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-6">
-    <div class="card ">
-      <div class="card-header">
-        <h4 class="card-title">Find Leads</h4>
-      </div>
-      <div class="card-body">
-        <div class="table-responsive">
-           <h4>
-            <strong> Business name:</strong> KC Cups Coffee Shop <br>
-            <strong> E-mail:</strong> kc@gmail.com <br>
-            <strong> Contact #:</strong> +63 945 256 9595 <br>
-            <strong> Address:</strong> Matina Davao City 
-          </h4>
-          <button type="submit" class="btn btn-fill btn-success">Add To List</button>
-          <button type="submit" class="btn btn-fill btn-success">Contact</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-6">
-    <div class="card ">
-      <div class="card-header">
-        <h4 class="card-title">Find Leads</h4>
-      </div>
-      <div class="card-body">
-        <div class="table-responsive">
-           <h4>
-            <strong> Business name:</strong> KC Cups Coffee Shop <br>
-            <strong> E-mail:</strong> kc@gmail.com <br>
-            <strong> Contact #:</strong> +63 945 256 9595 <br>
-            <strong> Address:</strong> Matina Davao City 
-          </h4>
-          <button type="submit" class="btn btn-fill btn-success">Add To List</button>
-          <button type="submit" class="btn btn-fill btn-success">Contact</button>
-        </div>
-      </div>
-    </div>
-  </div> -->
-
 </div>
 
 
@@ -244,7 +193,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Message</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Make a Call</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -254,7 +203,10 @@
       </div>
       <div class="modal-footer">
          <button type="submit" class="btn btn-success" id="contactBiz"><i class="fas fa-phone"></i></button>
-        <button type="submit" class="btn btn-success" id="biSave" data-toggle="modal" data-target="#Message"><i class="fas fa-envelope"></i></button>
+        <!-- <button type="submit" class="btn btn-success" id="biSave" data-toggle="modal" data-target="#Message"><i class="fas fa-envelope"></i></button> -->
+        <button type="button" rel="tooltip" title="Remove" id="hangup" class="btn btn-danger btn-simple btn-xs">
+            <i class="fa fa-times"></i>
+        </button>
       </div>
     </div>
   </div>
