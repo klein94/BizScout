@@ -172,7 +172,9 @@ return [
          */
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
-        // App\Providers\BroadcastServiceProvider::class,
+        //Gikan ni naka comment kaning tunga
+         App\Providers\BroadcastServiceProvider::class,
+        //Gikan ni naka comment kaning tunga
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 

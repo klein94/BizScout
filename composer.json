@@ -9,10 +9,12 @@
     "license": "MIT",
     "require": {
         "php": "^7.2",
+        "beyondcode/laravel-websockets": "^1.4",
         "fideloper/proxy": "^4.0",
         "laravel-frontend-presets/white-dashboard": "^1.0",
         "laravel/framework": "^6.0",
         "laravel/tinker": "^1.0",
+        "pusher/pusher-php-server": "~3.0",
         "scottybo/laravel-google-my-business": "^2.0",
         "twilio/sdk": "^5.39"
     },

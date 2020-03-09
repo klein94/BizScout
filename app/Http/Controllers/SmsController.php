@@ -29,3 +29,5 @@ class SmsController extends Controller
             echo  $e;
         }
 }
+}
+?>

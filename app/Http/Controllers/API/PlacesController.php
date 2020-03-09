@@ -4,7 +4,6 @@ namespace App\Http\Controllers\API;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
 use App\GoogleMapsAPI\GoogleMapsAPI;
 use App\Place;
 use App\Mail\TestEmail;
@@ -20,13 +19,13 @@ class PlacesController extends Controller
     }
 
     public function getContact($place_id) {
-        // contact/ChIJpwQQAWcW-TIResPz71qUQJQ
+        
         $results = new GoogleMapsAPI();
         echo $results->getContact($place_id);
     }
 
     public function getPhoto($photo_ref) {
-        // contact/ChIJpwQQAWcW-TIResPz71qUQJQ
+        
         $results = new GoogleMapsAPI();
         echo $results->getPhoto($photo_ref);
     }

@@ -100,7 +100,7 @@ class PageController extends Controller
     }
 
     public function getContact($place_id) {
-        // contact/ChIJpwQQAWcW-TIResPz71qUQJQ
+        
         $results = new GoogleMapsAPI();
         echo $results->getContact($place_id);
     }
@@ -153,9 +153,15 @@ class PageController extends Controller
     {
         return view('pages.inbox');
     }
+
+    public function chat()
+    {
+        return view('pages.chat');
+    }
  /**
      * Display findleads page
      *
      * @return \Illuminate\View\View
      */
 }
+?>

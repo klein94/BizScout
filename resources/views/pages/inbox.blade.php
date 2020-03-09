@@ -28,7 +28,7 @@
                             <tbody>
                                 <tr>
                                     <td>test@email.com</td>
-                                    <td>Hello World</td>
+                                    <td>Hello World test</td>
                             
                                     <td class="td-actions text-right">
                                         <!-- <button type="button" rel="tooltip" title="View Profile" class="btn btn-info btn-simple btn-xs">
