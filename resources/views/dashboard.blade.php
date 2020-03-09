@@ -50,7 +50,7 @@
                 <div class="card-header ">
                     <div class="row">
                         <div class="col-sm-6 text-left">
-                            <h5 class="card-category">Total Shipments</h5>
+                            <!-- <h5 class="card-category">Total Shipments</h5> -->
                             <h2 class="card-title">Performance</h2>
                         </div>
                         <div class="col-sm-6">
@@ -256,12 +256,12 @@
                                     <th>
                                         Name
                                     </th>
-                                    <th>
+                                    <!-- <th>
                                         Stored Leads
                                     </th>
                                     <th>
                                         Contacted Leads
-                                    </th>
+                                    </th> -->
                                     <!-- <th class="text-center">
                                         Salary
                                     </th> -->
@@ -272,12 +272,12 @@
                                     <td>
                                       Dakota Rice
                                     </td>
-                                    <td>
+                                    <!-- <td>
                                       Niger
                                     </td>
                                     <td>
                                       Oud-Turnhout
-                                    </td>
+                                    </td> -->
                                     <!-- <td class="text-center">
                                       $36,738
                                     </td> -->
@@ -286,12 +286,12 @@
                                     <td>
                                         Minerva Hooper
                                     </td>
-                                    <td>
+                                    <!-- <td>
                                         Curaçao
                                     </td>
                                     <td>
                                         Sinaai-Waas
-                                    </td>
+                                    </td> -->
                                     <!-- <td class="text-center">
                                         $23,789
                                     </td> -->
@@ -300,12 +300,12 @@
                                     <td>
                                         Sage Rodriguez
                                     </td>
-                                    <td>
+                                    <!-- <td>
                                         Netherlands
                                     </td>
                                     <td>
                                         Baileux
-                                    </td>
+                                    </td> -->
                                     <!-- <td class="text-center">
                                         $56,142
                                     </td> -->
@@ -314,12 +314,12 @@
                                     <td>
                                         Philip Chaney
                                     </td>
-                                    <td>
+                                    <!-- <td>
                                         Korea, South
                                     </td>
                                     <td>
                                         Overland Park
-                                    </td>
+                                    </td> -->
                                     <!-- <td class="text-center">
                                         $38,735
                                     </td> -->
@@ -328,12 +328,12 @@
                                     <td>
                                         Doris Greene
                                     </td>
-                                    <td>
+                                    <!-- <td>
                                         Malawi
                                     </td>
                                     <td>
                                         Feldkirchen in Kärnten
-                                    </td>
+                                    </td> -->
                                     <!-- <td class="text-center">
                                         $63,542
                                     </td> -->
@@ -342,12 +342,12 @@
                                     <td>
                                         Mason Porter
                                     </td>
-                                    <td>
+                                    <!-- <td>
                                         Chile
                                     </td>
                                     <td>
                                         Gloucester
-                                    </td>
+                                    </td> -->
                                     <!-- <td class="text-center">
                                         $78,615
                                     </td> -->
@@ -356,12 +356,12 @@
                                     <td>
                                         Jon Porter
                                     </td>
-                                    <td>
+                                    <!-- <td>
                                         Portugal
                                     </td>
                                     <td>
                                         Gloucester
-                                    </td>
+                                    </td> -->
                                     <!-- <td class="text-center">
                                         $98,615
                                     </td> -->

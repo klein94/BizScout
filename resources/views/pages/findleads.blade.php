@@ -130,7 +130,7 @@
     });
 
     $('.btnContactModal').click(function() {
-      alert('test');
+      //alert('test');
       let p = $(this).parent();
       let name = $('input[name="name"]', p).val();
       contactID = name;

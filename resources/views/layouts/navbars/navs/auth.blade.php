@@ -26,6 +26,11 @@
                         <span class="d-lg-none d-md-block">{{ __('Search') }}</span>
                     </button>
                 </li>
+                <li class="nav-link">
+                    <a href="{{ route('profile.edit') }}" class="nav-item dropdown-item " style="color: #ba54f5;">{{ __('Profile') }}</a>
+                    <a href="{{ route('logout') }}" class="nav-item dropdown-item" style="color: #fd5d93;" onclick="event.preventDefault();  document.getElementById('logout-form').submit();">{{ __('Log out') }}</a>
+                </li>
+                
                 <li class="dropdown nav-item hidden">
                     <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
                         <div class="notification d-none d-lg-block d-xl-block"></div>
@@ -50,7 +55,7 @@
                         </li> -->
                     </ul>
                 </li>
-                <li class="dropdown nav-item">
+                <li class="dropdown nav-item" hidden>
                     <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
                         <div class="photo">
                             <img src="{{ asset('white') }}/img/anime3.png" alt="{{ __('Profile Photo') }}">

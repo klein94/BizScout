@@ -52,13 +52,13 @@
 
                
         
-                <li @if ($pageSlug ?? '' ?? '' == 'contactlist') class="active" @endif>
+                <!-- <li @if ($pageSlug ?? '' ?? '' == 'contactlist') class="active" @endif>
                     <a href="{{ route('pages.contactlist') }}" >
                         <i class="tim-icons icon-single-02"></i>
                         <p>{{ _('Contact List') }}</p>
                     
                     </a>   
-                </li>
+                </li> -->
                 </div>
             </ul>
 
