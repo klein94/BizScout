@@ -20,7 +20,7 @@ class TestEmail extends Mailable
 
     public function build()
     {
-        $address = 'sendgrid@example.com';
+        $address = 'BizScout@example.com';
         $subject = $this->data['subject'];
         $name = 'Bizscout Admin';
         

@@ -11,6 +11,7 @@ use App\Mail\TestEmail;
 use Mail;
 use Twilio\Rest\Client;
 
+
 class PlacesController extends Controller
 {
     public function index() {
@@ -47,7 +48,7 @@ class PlacesController extends Controller
         // echo $msg;
 
         Mail::to($to)->send(new TestEmail($data));
-
+                
         $sid    = "ACcd4f21caa8a689260c3acc3df2f535c0";
         $token  = "5979659fb7d54b7f3bf5d07197018622";
 

@@ -78,21 +78,24 @@
 
     
 
-    $('.place-id').each(function(i) {
-        let place_id = $(this).attr('data');
-        $.ajax({
-            type: 'GET',
-            url: 'contact/' + place_id,
-            timeout: 5000,
-            success: (data, textStatus ) => {
-                let jsonData = JSON.parse(data);
-                $(this).html(jsonData['contact']);
-            },
-            error: (xhr, textStatus, errorThrown) => {
-                $(this).html('none');
-            }
-        });
-    });
+    // $('.place-id').each(function(i) {
+    //     let place_id = $(this).attr('data');
+    //     $.ajax({
+    //         type: 'GET',
+    //         url: 'contact/' + place_id,
+    //         timeout: 5000,
+    //         success: (data, textStatus ) => {
+    //             let jsonData = JSON.parse(data);
+    //             $(this).html(jsonData['contact']);
+    //         },
+    //         error: (xhr, textStatus, errorThrown) => {
+    //             $(this).html('none');
+    //         }
+    //     });
+    // });
+
+    getContactNumbers();
+
     $('#inlineFormInputGroup').keyup(function(e) {
       if (e.keyCode == 13) {
         location.href = '/findleads/' + $(this).val();
@@ -153,6 +156,24 @@
             console.log(textStatus);
             console.log(xhr.responseText);
         }
+      });
+    }
+
+    function getContactNumbers() {
+      $('.place-id').each(function(i) {
+        let place_id = $(this).attr('data');
+        $.ajax({
+            type: 'GET',
+            url: '/contact/' + place_id,
+            timeout: 5000,
+            success: (data, textStatus ) => {
+                let jsonData = JSON.parse(data);
+                $(this).html(jsonData['contact']);
+            },
+            error: (xhr, textStatus, errorThrown) => {
+                $(this).html('none');
+            }
+        });
       });
     }
   });
