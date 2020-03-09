@@ -14,7 +14,7 @@
         "laravel-frontend-presets/white-dashboard": "^1.0",
         "laravel/framework": "^6.0",
         "laravel/tinker": "^1.0",
-        "pusher/pusher-php-server": "~3.0",
+        "pusher/pusher-php-server": "^4.1",
         "scottybo/laravel-google-my-business": "^2.0",
         "twilio/sdk": "^5.39"
     },

@@ -42,20 +42,19 @@ class PlacesController extends Controller
         $subject = $request->input('subject');
         $msg = $request->input('message');
 
-        $data = ['subject' => $subject,'message' => $msg];
+        $data = ['subject' => $subject, 'message' => $msg];
 
         // echo $msg;
 
         Mail::to($to)->send(new TestEmail($data));
                 
         $sid    = "ACcd4f21caa8a689260c3acc3df2f535c0";
-        $token  = "5979659fb7d54b7f3bf5d07197018622";
+        $token  = "b0719208d2ed074a5d6071ccc96c23f3";
 
         $twilio = new Client($sid, $token);
 
-        $message = $twilio->messages
-            //to 
-            ->create("+639359186078", 
+        $message = $twilio->messages 
+            ->create("+639359186078", //to
                     ["from" => "+15204770050", "body" => $data['message']]
             );
 
