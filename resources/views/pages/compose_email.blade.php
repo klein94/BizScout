@@ -56,13 +56,6 @@
                     <form method = "POST" action="email">
                         {{ csrf_field() }}
                         <div class="form-group">
-                        <label for="exampleFormControlInput1">Subject</label>
-                        <input type="text" name="subject" class="form-control" id="subject" placeholder="Subject">
-                        
-                        <label for="exampleFormControlInput1">To:</label>
-                        <input type="email" name="emailTo" class="form-control" id="exampleFormControlInput2" placeholder="name@example.com">
-                        </div>
-                        <div class="form-group">
                         <label for="exampleFormControlSelect1">Example select</label>
                         <select class="form-control" id="emailCampaignList">
                             <option value="0">Select Campaign</option>
@@ -72,8 +65,15 @@
                         </select>
                         </div>
                         <div class="form-group">
+                        <label for="exampleFormControlInput1">Subject</label>
+                        <input type="text" name="subject" class="form-control" id="subject" placeholder="Subject">
+                        
+                        <label for="exampleFormControlInput1">To:</label>
+                        <input type="email" name="emailTo" class="form-control" id="exampleFormControlInput2" placeholder="name@example.com">
+                        </div>
+                        <div class="form-group">
                         <label for="exampleFormControlTextarea1">Message</label>
-                        <textarea name="message" class="form-control" id="message" rows="3"></textarea>
+                        <textarea name="message" class="form-control" id="message" rows="3"> </textarea>
                         </div>
 
                         <button type="submit" class="btn btn-success">Submit</button>

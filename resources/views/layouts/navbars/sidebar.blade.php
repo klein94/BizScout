@@ -62,13 +62,13 @@
                 </div>
             </ul>
 
-            <li @if ($pageSlug ?? '' ?? '' == 'chat') class="active" @endif>
+            <!-- <li @if ($pageSlug ?? '' ?? '' == 'chat') class="active" @endif>
                     <a href="{{ route('pages.chat') }}" >
                         <i class="tim-icons icon-chat-33"></i>
                         <p>{{ _('Chat') }}</p>
                     
                     </a>   
-                </li>
+                </li> -->
            
             <li>
                 <a data-toggle="collapse" href="#laravel-examples" aria-expanded="true">
